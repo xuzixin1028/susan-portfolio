@@ -120,3 +120,31 @@ button, a { color:inherit; }
   .legend-footer { margin:14px 0 0; }
   .pegboard { min-height:1500px;background:transparent; }
 }
+
+/* Full-viewport cork pushpin board — no exterior header or footer */
+html,body { min-height:100%;background:#b9844f; }
+.site-shell { min-height:100vh;padding:0;background:#b9844f; }
+.portfolio-frame {
+  min-height:100vh;
+  border-radius:0;
+  border:12px solid #6d4b2d;
+  background-color:#c8945d;
+  background-image:radial-gradient(ellipse at 18% 30%,#6f472736 0 1px,transparent 1.8px),radial-gradient(ellipse at 72% 62%,#f4d49f55 0 1px,transparent 1.7px),radial-gradient(ellipse at 44% 77%,#84552d38 0 1.2px,transparent 2px),linear-gradient(112deg,#ecc28a55 0%,transparent 38%,#75462130 100%);
+  background-size:17px 13px,23px 19px,29px 21px,100% 100%;
+  background-position:0 0;
+  box-shadow:inset 0 0 0 3px #e3bd88,inset 0 0 38px #4c2f1b88;
+}
+.legend-card { align-self:center; }
+.pegboard { min-height:calc(100vh - 24px); }
+@media (max-width:900px) {
+  .site-shell { padding:0; }
+  .portfolio-frame { min-height:100vh;border-width:8px; }
+  .pegboard { min-height:1040px; }
+}
+@media (max-width:640px) {
+  .portfolio-frame {
+    background-size:17px 13px,23px 19px,29px 21px,100% 100%;
+    background-position:0 0;
+  }
+  .pegboard { min-height:1500px; }
+}

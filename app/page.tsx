@@ -15,7 +15,6 @@ export default function Home() {
   const [active, setActive] = useState(0);
   return (
     <main className="site-shell">
-      <div className="top-strip"><span>DAWN / VISUAL DESIGNER</span><span>PORTFOLIO · 2026</span><span>CHANGSHA, CN</span></div>
       <section className="portfolio-frame" aria-label="DAWN 视觉设计作品集">
         <aside className="legend-card paper-card">
           <div className="brand-block"><p className="eyebrow">DA×WN PORTFOLIO</p><p className="micro">WHERE IDEAS MEET NEW BEGINNINGS.</p></div>
@@ -42,7 +41,6 @@ export default function Home() {
           <aside className="object open-note paper-card"><span className="chain" /><b>OPEN TO WORK ☺</b><p>Let&apos;s create<br />something great<br />together!</p><hr /><small>Available for<br />full-time roles<br />&amp; exciting projects.</small><span className="barcode" /></aside>
         </div>
       </section>
-      <footer className="bottom-strip"><span>SCROLL TO EXPLORE</span><span>01 — 05</span><span>DESIGNED WITH CURIOSITY</span></footer>
     </main>
   );
 }
