@@ -54,3 +54,69 @@ button, a { color:inherit; }
 .chain { left:45px;top:-17px;width:23px;height:23px;border:3px solid #7d1e19;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9a81 0 12%,#df4935 28%,#9f241d 72%);box-shadow:0 4px 6px #3c241a55; }
 .chain:after { left:9px;top:18px;bottom:auto;width:2px;height:37px;background:#aaa;transform:none; }
 @media (max-width:640px) { .pegboard { background-size:17px 13px,23px 19px,29px 21px,100% 100%; } }
+
+/* One continuous pegboard; the legend becomes a pinned note */
+.portfolio-frame {
+  grid-template-columns:360px 1fr;
+  gap:0;
+  padding:14px;
+  background-color:#eee4d2;
+  background-image:radial-gradient(circle,#312a23 0 5px,transparent 5.7px),linear-gradient(110deg,#fff8 0%,transparent 36%,#cdb89433 100%);
+  background-size:72px 66px,100% 100%;
+  background-position:34px 38px,0 0;
+}
+.legend-card {
+  position:relative;
+  z-index:4;
+  align-self:center;
+  min-height:680px;
+  margin:26px 12px 26px 20px;
+  padding:38px 34px 26px;
+  border:0;
+  border-radius:3px;
+  background:linear-gradient(155deg,#fff5aa,#f3e58f 72%,#e5d06b);
+  box-shadow:0 12px 19px #4b351e35,inset 0 0 22px #fff8;
+  transform:rotate(-.65deg);
+}
+.legend-card:before {
+  content:"";
+  position:absolute;
+  left:50%;top:-14px;
+  width:27px;height:27px;
+  transform:translateX(-50%);
+  border:3px solid #83201a;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#ff9a81 0 12%,#df4935 28%,#9f241d 72%);
+  box-shadow:0 4px 6px #3c241a55;
+}
+.legend-card:after {
+  content:"";
+  position:absolute;
+  right:22px;top:-9px;
+  width:72px;height:23px;
+  background:#f2e4c999;
+  transform:rotate(5deg);
+  box-shadow:0 1px 2px #4b351e22;
+}
+.pegboard {
+  min-height:740px;
+  border:0;
+  border-radius:0 22px 22px 0;
+  background:transparent;
+  box-shadow:none;
+}
+@media (max-width:1200px) {
+  .portfolio-frame { grid-template-columns:300px 1fr; }
+  .legend-card { margin-left:10px;padding:34px 26px 24px; }
+}
+@media (max-width:900px) {
+  .portfolio-frame { display:block; }
+  .legend-card { display:flex;min-height:0;margin:28px 18px 0;padding:28px;transform:rotate(-.4deg); }
+  .pegboard { min-height:1040px; }
+}
+@media (max-width:640px) {
+  .portfolio-frame { background-size:58px 58px,100% 100%;background-position:24px 28px,0 0; }
+  .legend-card { display:flex;margin:24px 8px 6px;padding:24px 22px; }
+  .legend-card .rule,.legend-card .legend-list,.legend-card .mode-block,.legend-card .statement { display:none; }
+  .legend-footer { margin:14px 0 0; }
+  .pegboard { min-height:1500px;background:transparent; }
+}
