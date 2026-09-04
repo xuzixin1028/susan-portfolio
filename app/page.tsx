@@ -22,7 +22,7 @@ const detailPanels = {
 } as const;
 
 type PanelKey = keyof typeof detailPanels;
-type ActivePanel = PanelKey | 'telosz';
+type ActivePanel = PanelKey | 'telosz' | 'portfolio';
 const dashboardViews = ['Triage', 'Revenue', 'Pipeline', 'Satisfaction', 'Licenses', 'Workspace'] as const;
 type DashboardView = (typeof dashboardViews)[number];
 
@@ -49,8 +49,14 @@ function DashboardContent({ view }: { view: DashboardView }) {
 export default function Home() {
   const [active, setActive] = useState(0);
   const [activePanel, setActivePanel] = useState<ActivePanel | null>(null);
+  const [portfolioPage, setPortfolioPage] = useState({ title: 'IBM', page: 1, telos: false });
   const [dashboardView, setDashboardView] = useState<DashboardView>('Triage');
-  const panel = activePanel && activePanel !== 'telosz' ? detailPanels[activePanel] : null;
+  const panel = activePanel && activePanel !== 'telosz' && activePanel !== 'portfolio' ? detailPanels[activePanel] : null;
+
+  const openPortfolio = (title: string, page: number, telos = false) => {
+    setPortfolioPage({ title, page, telos });
+    setActivePanel('portfolio');
+  };
 
   const keyboardOpen = (panelKey: PanelKey) => (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -65,28 +71,28 @@ export default function Home() {
         <aside className="profile-strip">
           <header><h1>SUSAN XU</h1><p>Information Science, Systems, and<br />Technology</p><small>@ Cornell Engineering</small><em>Data Science + UX Design</em></header>
           <section><span>ABOUT ME</span><p>Designing thoughtful products at the intersection of human-centered design, technology, and product strategy.</p></section>
-          <nav aria-label="Table of contents"><span>TABLE OF CONTENTS</span>{['IBM','Altheros Capital','Medium Design Collective','New York State Bridge Authority','Develop For Good','Chinese Drama Society at Cornell','INFO 1998','INFO 3450','INFO 4125'].map((item,i)=><button key={item} onClick={() => setActivePanel(i === 0 ? 'telosz' : i < 6 ? 'works' : 'skills')}><b>0{i+1}</b>{item}</button>)}</nav>
+          <nav aria-label="Table of contents"><span>TABLE OF CONTENTS</span>{[['IBM',1],['Altheros Capital',2],['Medium Design Collective',4],['New York State Bridge Authority',6],['Develop For Good',7],['Chinese Drama Society at Cornell',21],['INFO 1998',8],['INFO 3450',22],['INFO 4125',23]].map(([item,page],i)=><button key={item} onClick={() => openPortfolio(String(item),Number(page),i === 0)}><b>0{i+1}</b>{item}</button>)}</nav>
           <footer><span>STAY CONNECTED</span><div><a href="mailto:hello@dawn.design">Email ↗</a><a href="#">LinkedIn ↗</a></div></footer>
         </aside>
 
         <div className="cork-canvas">
-          <button className="pin-piece ibm-sticker" onClick={() => setActivePanel('telosz')} aria-label="Open the TelosZ project"><i className="blue-pin" /><span>IBM.</span><small>TELOSZ PROJECT</small></button>
+          <button className="pin-piece ibm-sticker" onClick={() => openPortfolio('IBM',1,true)} aria-label="Open the IBM case study and TelosZ project"><i className="blue-pin" /><img src="/portfolio/ibm.png" alt="IBM" /><small>TELOSZ PROJECT</small></button>
           <button className="pin-piece abroad-card" onClick={() => setActivePanel('about')}><i className="blue-pin" /><span>Semester Abroad</span><b>Fall 2026</b></button>
-          <button className="pin-piece bridge-sticker" onClick={() => setActivePanel('works')}><i className="green-pin" /><span>NEW<br /><b>YORK</b><br />STATE</span><strong>Bridge<br />Authority</strong></button>
-          <button className="pin-piece drama-sticker" onClick={() => setActivePanel('works')}><i className="red-pin" /><span>剧</span><small>CORNELL CHINESE DRAMA SOCIETY</small></button>
-          <button className="pin-piece cornell-pennant" onClick={() => setActivePanel('about')}><i className="red-pin" /><span>CORNELL</span></button>
-          <button className="pin-piece camera-sticker" onClick={() => setActivePanel('works')}><i className="green-pin" /><span /><b>◉</b></button>
-          <button className="pin-piece develop-sticker" onClick={() => setActivePanel('works')}><i className="red-pin" /><span>&lt;develop<span>for good</span>&gt;</span></button>
-          <button className="pin-piece ac-note" onClick={() => setActivePanel('works')}><i className="blue-pin" /><span>AC</span></button>
-          <button className="pin-piece map-polaroid" onClick={() => setActivePanel('about')}><i className="blue-pin" /><small>PLACES I&apos;VE BEEN</small><div className="map-art">✦　 ·　 ✦<br />　✦　　·　　✦</div></button>
-          <button className="pin-piece yami-sticker" onClick={() => setActivePanel('works')}><i className="red-pin" /><span>％</span><b>YAMI</b></button>
-          <button className="pin-piece medium-sticker" onClick={() => setActivePanel('works')}><i className="orange-pin" /><span>medium</span><small>design collective</small></button>
-          <button className="pin-piece portrait-polaroid" onClick={() => setActivePanel('resume')}><i className="red-pin" /><div><span>SX</span></div><b>Susan Xu</b></button>
-          <button className="pin-piece course-card info-1998" onClick={() => setActivePanel('skills')}><i className="purple-pin" /><small>COURSEWORK　07</small><b>INFO 1998</b><span>Digital Product Design</span></button>
-          <button className="pin-piece suitcase-sticker" onClick={() => setActivePanel('resume')}><i className="brown-pin" /><span>✦ ◈ ✿ ◇<br />◇ ✿ ◈ ✦</span></button>
-          <button className="pin-piece course-card info-3450" onClick={() => setActivePanel('skills')}><i className="blue-pin" /><small>RESEARCH　08</small><b>INFO 3450</b><span>Human Computer Interaction</span></button>
-          <button className="pin-piece course-card info-4125" onClick={() => setActivePanel('skills')}><i className="brown-pin" /><small>COURSEWORK　09</small><b>INFO 4125</b><span>Project Management</span></button>
-          <button className="pin-piece notion-sticker" onClick={() => setActivePanel('contact')}><i className="blue-pin" /><span>N</span></button>
+          <button className="pin-piece bridge-sticker" onClick={() => openPortfolio('New York State Bridge Authority',6)}><i className="green-pin" /><img src="/portfolio/bridge-authority.png" alt="New York State Bridge Authority" /></button>
+          <button className="pin-piece drama-sticker" onClick={() => openPortfolio('Chinese Drama Society at Cornell',21)}><i className="red-pin" /><img src="/portfolio/cdsc.png" alt="Chinese Drama Society at Cornell" /></button>
+          <button className="pin-piece cornell-pennant" onClick={() => setActivePanel('about')}><i className="red-pin" /><img src="/portfolio/cornell-pennant.png" alt="Cornell" /></button>
+          <button className="pin-piece camera-sticker" onClick={() => setActivePanel('works')}><i className="green-pin" /><img src="/portfolio/camera.png" alt="Film camera" /></button>
+          <button className="pin-piece develop-sticker" onClick={() => openPortfolio('Develop for Good',7)}><i className="red-pin" /><img src="/portfolio/dfg.jpeg" alt="Develop for Good" /></button>
+          <button className="pin-piece ac-note" onClick={() => openPortfolio('Altheros Capital',2)}><i className="blue-pin" /><img src="/portfolio/ac.jpeg" alt="Altheros Capital" /></button>
+          <button className="pin-piece map-polaroid" onClick={() => setActivePanel('about')}><i className="blue-pin" /><small>PLACES I&apos;VE BEEN</small><img src="/portfolio/travel-map.png" alt="Places Susan has visited" /></button>
+          <button className="pin-piece yami-sticker" onClick={() => openPortfolio('Yami',24)}><i className="red-pin" /><img src="/portfolio/yami.png" alt="Yami" /></button>
+          <button className="pin-piece medium-sticker" onClick={() => openPortfolio('Medium Design Collective',4)}><i className="orange-pin" /><img src="/portfolio/mdc.jpeg" alt="Medium Design Collective" /></button>
+          <button className="pin-piece portrait-polaroid" onClick={() => setActivePanel('resume')}><i className="red-pin" /><img src="/portfolio/portrait.jpg" alt="Susan Xu" /><b>Susan Xu</b></button>
+          <button className="pin-piece course-card info-1998" onClick={() => openPortfolio('INFO 1998',8)}><i className="purple-pin" /><small>COURSEWORK　07</small><b>INFO 1998</b><span>Digital Product Design</span></button>
+          <button className="pin-piece suitcase-sticker" onClick={() => setActivePanel('resume')}><i className="brown-pin" /><img src="/portfolio/suitcase.png" alt="Travel suitcase" /></button>
+          <button className="pin-piece course-card info-3450" onClick={() => openPortfolio('INFO 3450',22)}><i className="blue-pin" /><small>RESEARCH　08</small><b>INFO 3450</b><span>Human Computer Interaction</span></button>
+          <button className="pin-piece course-card info-4125" onClick={() => openPortfolio('INFO 4125',23)}><i className="brown-pin" /><small>COURSEWORK　09</small><b>INFO 4125</b><span>Project Management</span></button>
+          <button className="pin-piece notion-sticker" onClick={() => openPortfolio('Notion',25)}><i className="blue-pin" /><img src="/portfolio/notion.png" alt="Notion" /></button>
           <i className="loose-pin loose-one" /><i className="loose-pin loose-two" /><i className="loose-pin loose-three" />
         </div>
       </section>
@@ -102,6 +108,10 @@ export default function Home() {
             <DashboardContent view={dashboardView} />
             <button className="probe-button">✦ Probe with Assistant <i>3</i></button>
           </div>
+        </DialogContent>}
+        {activePanel === 'portfolio' && <DialogContent className="portfolio-pdf-modal">
+          <div className="portfolio-pdf-header"><DialogTitle>{portfolioPage.title}</DialogTitle>{portfolioPage.telos && <button onClick={() => setActivePanel('telosz')}>LINK PROJECT <ArrowRight /></button>}</div>
+          <iframe title={`${portfolioPage.title} portfolio case study`} src={`/portfolio/portfolio-writing.pdf#page=${portfolioPage.page}&view=FitH`} />
         </DialogContent>}
         {panel && <DialogContent className="detail-modal">
           <div className="modal-heading"><DialogTitle>{panel.title}</DialogTitle><DialogDescription>{panel.description}</DialogDescription></div>
