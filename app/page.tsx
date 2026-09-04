@@ -40,6 +40,8 @@ interface Detail {
   impact?: string
   takeaways?: string
   projectLink?: string
+  projectLinks?: { label: string; url: string }[]
+  pdfPage?: number
   sections?: ProjectSection[]
   images?: string[]
   imageLabels?: string[]
@@ -136,6 +138,7 @@ const PROJECTS: Project[] = [
       impact: "I worked across product strategy, UX, data, and AI, defining requirements with PMs, designing dashboard experiences and workflows, and integrating AI-powered analysis with IBM Bob. Our analysis uncovered missing loss reasons in 70% of lost deals and helped surface $75M in potential annual expansion opportunities through account benchmarking.",
       takeaways: "Note: All customer, revenue, account, and performance data shown in this portfolio case study is mock data created for demonstration purposes and does not represent actual IBM customer or business data.",
       projectLink: 'https://antonio.ac/telosz',
+      pdfPage: 1,
     }
   },
   {
@@ -162,6 +165,7 @@ const PROJECTS: Project[] = [
         { name: 'California Property Company', tags: 'Real Estate · Development' },
         { name: 'JR', tags: 'Technology · Advanced Robotics' },
       ],
+      pdfPage: 2,
     }
   },
   {
@@ -193,6 +197,7 @@ const PROJECTS: Project[] = [
           link: 'https://drive.google.com/file/d/1qP9T5C8Tqun1HlrU3TdP6OfUH9kPT0gt/view?usp=sharing',
         },
       ],
+      pdfPage: 4,
     }
   },
   {
@@ -208,6 +213,7 @@ const PROJECTS: Project[] = [
       process: 'Audited existing data infrastructure across 5 bridge facilities, designed a unified database schema, built automated reporting scripts in Python, and documented the full system.',
       impact: "Reduced time-to-report for maintenance inspections by 65%. New data system is now the foundation for the NYSBA's ongoing digital modernization initiative.",
       takeaways: 'Technology in public infrastructure demands extreme reliability and thorough documentation — decisions affect physical safety, not just software behavior.',
+      pdfPage: 6,
     }
   },
   {
@@ -223,6 +229,11 @@ const PROJECTS: Project[] = [
       process: 'Led discovery sessions with the nonprofit leadership team, designed wireframes and high-fidelity mockups in Figma, and collaborated with a 4-person dev team to ship a volunteer management portal.',
       impact: 'Delivered a system actively used by 200+ volunteers. Client reported saving 5+ staff hours per week on administrative coordination tasks.',
       takeaways: 'Nonprofit product design means optimizing for resource constraints. Simplicity and long-term maintainability outweigh feature richness every time.',
+      projectLinks: [
+        { label: 'CLIMATE DONOR', url: 'https://docs.google.com/presentation/d/1b9fhxZrU-9FvxavxaELBT948hnGnNOvjmqkbhcFY8Jo/edit?slide=id.gc6f73a04f_0_0#slide=id.gc6f73a04f_0_0' },
+        { label: 'PRIDE FAMILY', url: 'https://developforgood.notion.site/The-Pride-Family-Designing-A-Web-App-Connecting-Disowned-LGBTQIA-Individuals-with-Supportive-Famil-197fbe7117c080f598a1f78b3a5fd9e6' },
+      ],
+      pdfPage: 7,
     }
   },
   {
@@ -238,6 +249,7 @@ const PROJECTS: Project[] = [
       process: 'Redesigned the full visual identity system, built reusable design templates for recurring content, directed promotional photoshoots, and designed programs and posters for 3 major productions.',
       impact: 'Production attendance increased by 50% following the rebrand. Social following grew from 300 to 800+ across platforms.',
       takeaways: 'Creative direction means building systems that scale — not just making one beautiful thing, but designing so the whole team can consistently produce beautiful things.',
+      pdfPage: 21,
     }
   },
   {
@@ -253,6 +265,7 @@ const PROJECTS: Project[] = [
       impact: "Final prototype covers 6 screens: entry point, select mode activation, partial/full selection states, playlist picker, and the updated playlist view. Research screenshots from real Spotify informed the starting interaction model.",
       images: [info1998_lofi1, info1998_lofi2, info1998_midfi, info1998_hifi, info1998_proto, info1998_real1, info1998_real2],
       imageLabels: ['Lo-Fi Sketches — Feature 1: Multi-Select', 'Lo-Fi Sketches — After Add/Delete flows', 'Mid-Fi Wireframes', 'Hi-Fi Mockups', 'Prototype Flow', 'Research: Spotify Context (1)', 'Research: Spotify Context (2)'],
+      pdfPage: 8,
     }
   },
   {
@@ -267,6 +280,11 @@ const PROJECTS: Project[] = [
       process: 'Conducted heuristic evaluations, contextual inquiry studies, think-aloud usability sessions, and semester-long independent research on attention patterns in algorithmic news feeds.',
       impact: 'Research insights presented to the department. Methods and frameworks now directly inform my professional UX research practice.',
       takeaways: "HCI research consistently reveals that assumptions about how real people use technology are almost always wrong. Observe carefully — don't assume.",
+      projectLinks: [
+        { label: 'VIEW PROJECT', url: 'https://drive.google.com/file/d/1gECj31k4ez8fCcnRmxXayhcBmzQQ84PZ/view?usp=sharing' },
+        { label: 'VIEW PROTOTYPE', url: 'https://www.figma.com/proto/90YuYZiRLxPAye4jqaXNwc/INFO-3450-Figma-Design--Copy-?node-id=87-122&starting-point-node-id=5%3A2&t=Z0CHe4ajHPgqP8Do-1' },
+      ],
+      pdfPage: 22,
     }
   },
   {
@@ -281,9 +299,27 @@ const PROJECTS: Project[] = [
       process: 'Led a team of 5 through the full design sprint lifecycle: scoping, discovery, ideation, prototyping, and formal presentation to client stakeholders using Jira, Confluence, and Figma.',
       impact: 'Client presentation rated excellent by both course instructors and the external sponsor. Project was selected as a showcase example for future cohorts.',
       takeaways: 'Managing creative teams requires clarity without rigidity — the right process creates space for creativity rather than constraining it.',
+      projectLink: 'https://docs.google.com/presentation/d/1k9oLlKgfc7v7kqiw2zOyQjWGYr4ZTzpjVkKJLI-6tbA/edit?usp=sharing',
+      pdfPage: 23,
     }
   },
 ]
+
+const YAMI_PROJECT: Project = {
+  id: 10, num: '10', title: 'Yami', role: 'Campus Ambassador', category: 'CAMPUS AMBASSADOR', cardType: 'sticker', rotation: 4, top: '3%', left: '55%', pinColor: '#cc2222', bg: '#fff', accent: '#cc2222', stickerSrc: yamiImg,
+  detail: { timeline: 'Sept. 2025 – Present', overview: "Bringing Yami to Cornell through content, community, and campus experiences. As a Campus Ambassador, I create social media content and support in-person activations that introduce Yami products and campaigns to Cornell's student community.", pdfPage: 24 }
+}
+
+const NOTION_PROJECT: Project = {
+  id: 11, num: '11', title: 'Notion', role: 'Campus Ambassador', category: 'CAMPUS AMBASSADOR', cardType: 'sticker', rotation: -3, top: '82%', left: '50%', pinColor: '#444', bg: '#fff', accent: '#111', stickerSrc: notionImg,
+  detail: { timeline: 'Sept. 2025 – May 2026', overview: 'Connecting students with tools for better ways to learn, organize, and create. As a Campus Ambassador, I promote Notion through social media and campus events, helping students discover ways to incorporate the platform into their academic and creative workflows.', pdfPage: 25 }
+}
+
+const tocTitle = (project: Project) => ({
+  7: 'INFO 1998 — Intro to Digital Product Design',
+  8: 'INFO 3450 — Human Computer Interaction',
+  9: 'INFO 4125 — Project Management',
+}[project.id] ?? project.title)
 
 // ─── Push Pin ─────────────────────────────────────────────────────────────────
 
@@ -1059,6 +1095,17 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
         <div style={{ height: '1px', background: '#ececec', marginBottom: '32px' }} />
 
+        {project.detail.pdfPage && (
+          <div style={{ marginBottom: '32px' }}>
+            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '8px', letterSpacing: '0.18em', color: '#c0c0c0', marginBottom: '10px' }}>COMPLETE PORTFOLIO ENTRY</div>
+            <iframe
+              title={`${project.title} complete portfolio entry`}
+              src={`/portfolio-assets/Portfolio_Writing.pdf#page=${project.detail.pdfPage}&view=FitH`}
+              style={{ width: '100%', height: '680px', border: '1px solid #e3e3e3', background: '#f5f5f5' }}
+            />
+          </div>
+        )}
+
         {/* Meta row */}
         {(project.detail.team || project.detail.myRole) && (
           <div style={{ display: 'flex', gap: '32px', marginBottom: '28px' }}>
@@ -1102,6 +1149,17 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               style={{ fontFamily: "'Space Mono', monospace", fontSize: '10px', letterSpacing: '0.12em', color: project.accent, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px', borderBottom: `1px solid ${project.accent}40`, paddingBottom: '2px' }}>
               VIEW PROJECT ↗
             </a>
+          </div>
+        )}
+
+        {project.detail.projectLinks && project.detail.projectLinks.length > 0 && (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '28px' }}>
+            {project.detail.projectLinks.map((link) => (
+              <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer"
+                style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '0.1em', color: '#fff', background: project.accent, textDecoration: 'none', padding: '9px 13px', borderRadius: '2px' }}>
+                {link.label} ↗
+              </a>
+            ))}
           </div>
         )}
 
@@ -1230,7 +1288,7 @@ export default function App() {
                   {p.num}
                 </span>
                 <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: '10.5px', color: highlightedId === p.id ? '#1a1a1a' : '#555', fontWeight: highlightedId === p.id ? 700 : 500, lineHeight: 1.38 }}>
-                  {p.title}
+                  {tocTitle(p)}
                 </span>
               </div>
             ))}
@@ -1322,13 +1380,13 @@ export default function App() {
             <SuitcaseCard onOpen={() => setShowTravel(true)} />
 
             {/* Yami sticker */}
-            <div style={{ position: 'absolute', top: '3%', left: '55%', width: '80px', zIndex: 2, transform: 'rotate(4deg)', pointerEvents: 'none' }}>
+            <div onClick={() => setActiveProject(YAMI_PROJECT)} style={{ position: 'absolute', top: '3%', left: '55%', width: '80px', zIndex: 2, transform: 'rotate(4deg)', cursor: 'pointer' }}>
               <PushPin color="#cc2222" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={yamiImg} alt="Yami" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
             </div>
 
             {/* Notion sticker */}
-            <div style={{ position: 'absolute', top: '82%', left: '50%', width: '88px', zIndex: 2, transform: 'rotate(-3deg)', pointerEvents: 'none' }}>
+            <div onClick={() => setActiveProject(NOTION_PROJECT)} style={{ position: 'absolute', top: '82%', left: '50%', width: '88px', zIndex: 2, transform: 'rotate(-3deg)', cursor: 'pointer' }}>
               <PushPin color="#444" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={notionImg} alt="Notion" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
             </div>
