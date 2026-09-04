@@ -2,35 +2,19 @@
 
 import { useState, useEffect } from 'react'
 import type { CSSProperties } from 'react'
-import ibmImg from './imports/IBM-1.png'
-import acImg from './imports/AC.jpeg'
-import mdcImg from './imports/MDC.jpeg'
-import bridgeImg from './imports/Bridge_Authority-removebg-preview-1.png'
-import dfgImg from './imports/DFG.jpeg'
-import cdscImg from './imports/CDSC-removebg-preview.png'
-import mapImg from './imports/ChatGPT_Image_Sep_1__2026__02_31_26_AM.png'
-import susanImg from './imports/IMG_4190.jpg'
-import icelandImg from './imports/DSC08670.JPG'
-import cornellImg from './imports/ChatGPT_Image_Sep_1__2026__03_12_35_AM-removebg-preview__1_-1.png'
-import edinburghImg from './imports/ChatGPT_Image_Sep_1__2026__03_03_57_AM-removebg-preview__1_-1.png'
-import cameraImg from './imports/GUEST_8594cd7d-301f-457a-8afe-4c27db3800a4-removebg-preview-1.png'
-import filmPhoto1 from './imports/72b8e607fo9db05fff5413e497d1592e.JPG'
-import filmPhoto2 from './imports/000059850004_Original.JPG'
-import filmPhoto3 from './imports/d69d61bb6r83cc5a239910984d81dab0.JPG'
-import suitcaseImg from './imports/ChatGPT_Image_Sep_2__2026__06_42_06_PM-removebg-preview.png'
-import info1998_lofi1 from './imports/Screenshot_2026-09-03_at_11.59.03_PM.png'
-import info1998_lofi2 from './imports/Screenshot_2026-09-03_at_11.59.09_PM.png'
-import info1998_midfi from './imports/Mid_Fi.png'
-import info1998_hifi from './imports/Hi_Fi.png'
-import info1998_proto from './imports/prototype.png'
-import info1998_real1 from './imports/IMG_4209.PNG'
-import info1998_real2 from './imports/IMG_4210.PNG'
-import yamiImg from './imports/ChatGPT_Image_Sep_2__2026__06_27_54_PM.png'
-import notionImg from './imports/ChatGPT_Image_Sep_2__2026__06_30_06_PM.png'
-import travelPhoto1 from './imports/DSC01513.JPG'
-import travelPhoto2 from './imports/DSC09778.JPG'
-import travelPhoto3 from './imports/IMG_2153.JPG'
-import travelPhoto4 from './imports/Screenshot_2026-09-02_at_6.43.01_PM.png'
+const asset = (name: string) => `/portfolio-assets/${name}`
+const ibmImg = asset('IBM-1.png'), acImg = asset('AC.jpeg'), mdcImg = asset('MDC.jpeg')
+const bridgeImg = asset('Bridge_Authority-removebg-preview-1.png'), dfgImg = asset('DFG.jpeg'), cdscImg = asset('CDSC-removebg-preview.png')
+const mapImg = asset('ChatGPT_Image_Sep_1__2026__02_31_26_AM.png'), susanImg = asset('IMG_4190.jpg'), icelandImg = asset('DSC08670.JPG')
+const cornellImg = asset('ChatGPT_Image_Sep_1__2026__03_12_35_AM-removebg-preview__1_-1.png'), edinburghImg = asset('ChatGPT_Image_Sep_1__2026__03_03_57_AM-removebg-preview__1_-1.png')
+const cameraImg = asset('GUEST_8594cd7d-301f-457a-8afe-4c27db3800a4-removebg-preview-1.png')
+const filmPhoto1 = asset('72b8e607fo9db05fff5413e497d1592e.JPG'), filmPhoto2 = asset('000059850004_Original.JPG'), filmPhoto3 = asset('d69d61bb6r83cc5a239910984d81dab0.JPG')
+const suitcaseImg = asset('ChatGPT_Image_Sep_2__2026__06_42_06_PM-removebg-preview.png')
+const info1998_lofi1 = asset('Screenshot_2026-09-03_at_11.59.03_PM.png'), info1998_lofi2 = asset('Screenshot_2026-09-03_at_11.59.09_PM.png')
+const info1998_midfi = asset('Mid_Fi.png'), info1998_hifi = asset('Hi_Fi.png'), info1998_proto = asset('prototype.png')
+const info1998_real1 = asset('IMG_4209.PNG'), info1998_real2 = asset('IMG_4210.PNG')
+const yamiImg = asset('ChatGPT_Image_Sep_2__2026__06_27_54_PM.png'), notionImg = asset('ChatGPT_Image_Sep_2__2026__06_30_06_PM.png')
+const travelPhoto1 = asset('DSC01513.JPG'), travelPhoto2 = asset('DSC09778.JPG'), travelPhoto3 = asset('IMG_2153.JPG'), travelPhoto4 = asset('Screenshot_2026-09-02_at_6.43.01_PM.png')
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
