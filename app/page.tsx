@@ -1418,7 +1418,7 @@ export default function App() {
             <SuitcaseCard onOpen={() => setShowTravel(true)} />
 
             {/* Yami sticker */}
-            <div onClick={() => setActiveProject(YAMI_PROJECT)} style={{ position: 'absolute', top: '3%', left: '55%', width: '80px', zIndex: 2, transform: 'rotate(4deg)', cursor: 'pointer' }}>
+            <div onClick={() => setActiveProject(YAMI_PROJECT)} style={{ position: 'absolute', top: '23%', left: '31%', width: '80px', zIndex: 2, transform: 'rotate(4deg)', cursor: 'pointer' }}>
               <PushPin color="#cc2222" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={yamiImg} alt="Yami" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
             </div>
