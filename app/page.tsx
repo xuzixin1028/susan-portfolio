@@ -61,30 +61,33 @@ export default function Home() {
 
   return (
     <main className="site-shell">
-      <section className="portfolio-frame" aria-label="DAWN 视觉设计作品集">
-        <aside className="legend-card paper-card clickable-sticker" role="button" tabIndex={0} onClick={() => setActivePanel('about')} onKeyDown={keyboardOpen('about')}>
-          <div className="brand-block"><p className="eyebrow">DA×WN PORTFOLIO</p><p className="micro">WHERE IDEAS MEET NEW BEGINNINGS.</p></div>
-          <div className="rule" />
-          <div className="mode-block"><p className="eyebrow">WHY NOT MODE</p><p className="micro"><span className="status-dot" /> CURIOSITY ACTIVE</p></div>
-          <div className="rule" />
-          <div><p className="eyebrow">BOARD LEGEND</p><ol className="legend-list">
-            {['Key Tag · About', 'Clear File · Works', 'ID Card · Resume', 'Black Badge · Skills', 'Airmail · Contact'].map((item, i) => <li key={item}><span>0{i + 1}</span><span>{item}</span></li>)}
-          </ol></div>
-          <div className="rule" />
-          <div><p className="eyebrow">OBJECT INTERFACE</p><p className="micro">→ HOVER FOR DETAILS</p><p className="micro">→ CLICK TO UNFOLD</p></div>
-          <div className="statement">BRANDS/OBJECTS<br />STORIES &amp;<br />IMAGE SYSTEMS.</div>
-          <div className="legend-footer"><div className="qr-grid" aria-hidden="true">{Array.from({ length: 25 }).map((_, i) => <i key={i} />)}</div><p>CONNECT &amp; FOLLOW<br /><span>Discover my works.<br />Let&apos;s cooperate.</span></p></div>
+      <section className="make-board" aria-label="Susan Xu pinned portfolio board">
+        <aside className="profile-strip">
+          <header><h1>SUSAN XU</h1><p>Information Science, Systems, and<br />Technology</p><small>@ Cornell Engineering</small><em>Data Science + UX Design</em></header>
+          <section><span>ABOUT ME</span><p>Designing thoughtful products at the intersection of human-centered design, technology, and product strategy.</p></section>
+          <nav aria-label="Table of contents"><span>TABLE OF CONTENTS</span>{['IBM','Altheros Capital','Medium Design Collective','New York State Bridge Authority','Develop For Good','Chinese Drama Society at Cornell','INFO 1998','INFO 3450','INFO 4125'].map((item,i)=><button key={item} onClick={() => setActivePanel(i === 0 ? 'telosz' : i < 6 ? 'works' : 'skills')}><b>0{i+1}</b>{item}</button>)}</nav>
+          <footer><span>STAY CONNECTED</span><div><a href="mailto:hello@dawn.design">Email ↗</a><a href="#">LinkedIn ↗</a></div></footer>
         </aside>
-        <div className="pegboard">
-          <button type="button" className="object about-tag sticker-button" aria-label="打开 TelosZ dashboard project" onClick={() => setActivePanel('telosz')}><span className="hook small" /><span className="tag-copy"><b>01</b><strong>TELOSZ</strong><em>运营看板</em><small>Open the live portfolio intelligence experience.</small><ArrowDownRight /></span></button>
-          <button type="button" className="object skill-badge sticker-button" onClick={() => setActivePanel('skills')}><span className="hook" /><div><p><b>04 SKILLS</b><span>技能标签</span></p><div className="skill-pills"><i>BRANDING</i><i>POSTER</i><i>PACKAGING</i><i>AI VISUAL</i><i>SOCIAL MEDIA</i></div><ArrowRight /></div></button>
-          <section className="object work-file clickable-sticker" role="button" tabIndex={0} aria-labelledby="works-title" onClick={() => setActivePanel('works')} onKeyDown={keyboardOpen('works')}><span className="hook file-hook" /><div className="file-shell">
-            <header><span className="section-number">02</span><h1 id="works-title">SELECTED WORKS</h1><p>精选作品</p><i /><small>A selection of projects in branding, packaging, poster &amp; more.</small></header>
-            <div className="project-stack">{projects.map((project, i) => <button key={project.id} className={active === i ? 'active' : ''} onClick={(event) => { event.stopPropagation(); setActive(i); setActivePanel('works'); }}><span className="project-no">{project.id}</span><span className="project-name"><b>{project.en}</b><small>{project.name}</small></span><span className={`project-art ${project.tone}`}><em>{project.note}</em></span></button>)}</div>
-          </div></section>
-          <button type="button" className="object resume-card paper-card sticker-button" onClick={() => setActivePanel('resume')}><span className="strap" /><div className="resume-inner"><div><b>03 ABOUT ME</b><span>简介<br />信息</span></div><div className="portrait">D</div><p>Work experience<br />Education</p><footer><span>VIEW CV</span><ArrowRight /></footer></div></button>
-          <button type="button" className="object contact-card paper-card sticker-button" onClick={() => setActivePanel('contact')}><span className="hook contact-hook" /><div className="stamp">✺</div><span className="section-number">05</span><h2>CONTACT</h2><p>联系方式</p><ul><li><Mail /> hello@dawn.design</li><li><Phone /> +86 183 7398 8105</li><li><MapPin /> Changsha, China</li></ul><ArrowRight className="contact-arrow" /></button>
-          <button type="button" className="object open-note paper-card sticker-button" onClick={() => setActivePanel('note')}><span className="chain" /><b>OPEN TO WORK ☺</b><p>Let&apos;s create<br />something great<br />together!</p><hr /><small>Available for<br />full-time roles<br />&amp; exciting projects.</small><span className="barcode" /></button>
+
+        <div className="cork-canvas">
+          <button className="pin-piece ibm-sticker" onClick={() => setActivePanel('telosz')} aria-label="Open the TelosZ project"><i className="blue-pin" /><span>IBM.</span><small>TELOSZ PROJECT</small></button>
+          <button className="pin-piece abroad-card" onClick={() => setActivePanel('about')}><i className="blue-pin" /><span>Semester Abroad</span><b>Fall 2026</b></button>
+          <button className="pin-piece bridge-sticker" onClick={() => setActivePanel('works')}><i className="green-pin" /><span>NEW<br /><b>YORK</b><br />STATE</span><strong>Bridge<br />Authority</strong></button>
+          <button className="pin-piece drama-sticker" onClick={() => setActivePanel('works')}><i className="red-pin" /><span>剧</span><small>CORNELL CHINESE DRAMA SOCIETY</small></button>
+          <button className="pin-piece cornell-pennant" onClick={() => setActivePanel('about')}><i className="red-pin" /><span>CORNELL</span></button>
+          <button className="pin-piece camera-sticker" onClick={() => setActivePanel('works')}><i className="green-pin" /><span /><b>◉</b></button>
+          <button className="pin-piece develop-sticker" onClick={() => setActivePanel('works')}><i className="red-pin" /><span>&lt;develop<span>for good</span>&gt;</span></button>
+          <button className="pin-piece ac-note" onClick={() => setActivePanel('works')}><i className="blue-pin" /><span>AC</span></button>
+          <button className="pin-piece map-polaroid" onClick={() => setActivePanel('about')}><i className="blue-pin" /><small>PLACES I&apos;VE BEEN</small><div className="map-art">✦　 ·　 ✦<br />　✦　　·　　✦</div></button>
+          <button className="pin-piece yami-sticker" onClick={() => setActivePanel('works')}><i className="red-pin" /><span>％</span><b>YAMI</b></button>
+          <button className="pin-piece medium-sticker" onClick={() => setActivePanel('works')}><i className="orange-pin" /><span>medium</span><small>design collective</small></button>
+          <button className="pin-piece portrait-polaroid" onClick={() => setActivePanel('resume')}><i className="red-pin" /><div><span>SX</span></div><b>Susan Xu</b></button>
+          <button className="pin-piece course-card info-1998" onClick={() => setActivePanel('skills')}><i className="purple-pin" /><small>COURSEWORK　07</small><b>INFO 1998</b><span>Digital Product Design</span></button>
+          <button className="pin-piece suitcase-sticker" onClick={() => setActivePanel('resume')}><i className="brown-pin" /><span>✦ ◈ ✿ ◇<br />◇ ✿ ◈ ✦</span></button>
+          <button className="pin-piece course-card info-3450" onClick={() => setActivePanel('skills')}><i className="blue-pin" /><small>RESEARCH　08</small><b>INFO 3450</b><span>Human Computer Interaction</span></button>
+          <button className="pin-piece course-card info-4125" onClick={() => setActivePanel('skills')}><i className="brown-pin" /><small>COURSEWORK　09</small><b>INFO 4125</b><span>Project Management</span></button>
+          <button className="pin-piece notion-sticker" onClick={() => setActivePanel('contact')}><i className="blue-pin" /><span>N</span></button>
+          <i className="loose-pin loose-one" /><i className="loose-pin loose-two" /><i className="loose-pin loose-three" />
         </div>
       </section>
 
