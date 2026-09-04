@@ -43,3 +43,8 @@ body,
   background: #e0e0e0;
   border-radius: 2px;
 }
+
+@media (max-width: 640px) {
+  .ibm-case { padding: 76px 24px 38px !important; }
+  .ibm-meta { grid-template-columns: 1fr !important; gap: 20px !important; }
+}

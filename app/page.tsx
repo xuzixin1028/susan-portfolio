@@ -1046,6 +1046,39 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     return () => window.removeEventListener('keydown', handler)
   }, [onClose])
 
+  if (project.id === 1) {
+    return (
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <article onClick={(e) => e.stopPropagation()} className="modal-scroll ibm-case" style={{ background: '#fff', width: 'min(780px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(-.2deg)' }}>
+          <PushPin color="#cc2200" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
+          <button onClick={onClose} style={{ position: 'absolute', top: '22px', left: '24px', border: 0, background: 'none', color: '#000', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.12em' }}>BACK TO BOARD ×</button>
+          <a href="https://antonio.ac/telosz" target="_blank" rel="noopener noreferrer" style={{ position: 'absolute', top: '18px', right: '24px', padding: '8px 12px', background: '#0d3880', color: '#fff', textDecoration: 'none', fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.12em' }}>VIEW PROJECT ↗</a>
+
+          <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>IBM</h2>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Turning fragmented revenue data into actionable insights for product managers.</p>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', gap: '28px' }}>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.14em' }}>MY ROLE</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>Product Management · Product Strategy · UX Design · AI/LLM · Data Visualization</p></div>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.14em' }}>TIMELINE</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>45 Days · Summer 2026</p></div>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.14em' }}>TEAM</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>3 Product Management Interns</p></div>
+          </div>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div style={{ display: 'grid', gap: '18px', color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>
+            <p style={{ margin: 0 }}>During my Product Management internship at IBM, my fellow interns and I developed Telos, a 0-to-1 internal revenue analytics platform built in 45 days to support 12 product managers across IBM’s $1B+ Z portfolio.</p>
+            <p style={{ margin: 0 }}>Product and revenue data previously lived across disconnected sources and manual Excel workflows, making it difficult for PMs to understand why deals were lost, compare account performance, and identify growth opportunities.</p>
+            <p style={{ margin: 0 }}>We brought CRM, revenue, deployment, and usage data together through PostgreSQL and MCP, enabling PMs to explore information through natural-language queries.</p>
+            <p style={{ margin: 0 }}>I worked across product strategy, UX, data, and AI, defining requirements with PMs, designing dashboard experiences and workflows, and integrating AI-powered analysis with IBM Bob. Our analysis uncovered missing loss reasons in 70% of lost deals and helped surface $75M in potential annual expansion opportunities through account benchmarking.</p>
+            <p style={{ margin: '8px 0 0', fontStyle: 'italic', color: '#555' }}>Note: All customer, revenue, account, and performance data shown in this portfolio case study is mock data created for demonstration purposes and does not represent actual IBM customer or business data.</p>
+          </div>
+        </article>
+      </div>
+    )
+  }
+
   return (
     <div
       onClick={onClose}
