@@ -144,7 +144,7 @@ const PROJECTS: Project[] = [
   {
     id: 2, num: '02', title: 'Altheros Capital', role: 'UI/UX Design Administrative Lead',
     category: 'UX DESIGN', cardType: 'sticker',
-    rotation: 4.0, top: '1.5%', left: '40%',
+    rotation: 4.0, top: '56%', left: '57%',
     pinColor: '#0d3880', bg: '#ffffff', accent: '#1a1a1a',
     stickerSrc: acImg, stickerSize: 115,
     detail: {
@@ -701,8 +701,8 @@ function SuitcaseCard({ onOpen }: { onOpen: () => void }) {
     <div
       style={{
         position: 'absolute',
-        top: '56%',
-        left: '48%',
+        top: '34%',
+        left: '23%',
         width: '120px',
         cursor: 'pointer',
         zIndex: hovered ? 20 : 2,
@@ -1391,7 +1391,7 @@ export default function App() {
             </div>
 
             {/* Notion sticker */}
-            <div onClick={() => setActiveProject(NOTION_PROJECT)} style={{ position: 'absolute', top: '82%', left: '50%', width: '88px', zIndex: 2, transform: 'rotate(-3deg)', cursor: 'pointer' }}>
+            <div onClick={() => setActiveProject(NOTION_PROJECT)} style={{ position: 'absolute', top: '12%', left: '23%', width: '88px', zIndex: 2, transform: 'rotate(-3deg)', cursor: 'pointer' }}>
               <PushPin color="#444" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={notionImg} alt="Notion" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
             </div>
