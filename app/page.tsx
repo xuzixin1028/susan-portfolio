@@ -125,7 +125,7 @@ const PROJECTS: Project[] = [
   {
     id: 1, num: '01', title: 'IBM', role: 'Product Management',
     category: 'PRODUCT MANAGEMENT', cardType: 'sticker',
-    rotation: -2.5, top: '4%', left: '1.5%',
+    rotation: -2.5, top: '10%', left: '2.5%',
     pinColor: '#cc2200', bg: '#000000', accent: '#0d3880',
     stickerSrc: ibmImg, stickerSize: 195,
     detail: {
@@ -144,7 +144,7 @@ const PROJECTS: Project[] = [
   {
     id: 2, num: '02', title: 'Altheros Capital', role: 'UI/UX Design Administrative Lead',
     category: 'UX DESIGN', cardType: 'sticker',
-    rotation: 4.0, top: '3%', left: '42%',
+    rotation: 4.0, top: '1.5%', left: '40%',
     pinColor: '#0d3880', bg: '#ffffff', accent: '#1a1a1a',
     stickerSrc: acImg, stickerSize: 115,
     detail: {
@@ -171,7 +171,7 @@ const PROJECTS: Project[] = [
   {
     id: 3, num: '03', title: 'Medium Design Collective', role: 'Product / Project Management',
     category: 'PRODUCT DESIGN', cardType: 'sticker',
-    rotation: -1.8, top: '5%', left: '62%',
+    rotation: -1.8, top: '2%', left: '70%',
     pinColor: '#c2400a', bg: '#1a1a1a', accent: '#888888',
     stickerSrc: mdcImg, stickerSize: 152,
     detail: {
@@ -203,7 +203,7 @@ const PROJECTS: Project[] = [
   {
     id: 4, num: '04', title: 'New York State Bridge Authority', role: 'Engineering / Technology',
     category: 'ENGINEERING', cardType: 'sticker',
-    rotation: 2.2, top: '43%', left: '3%',
+    rotation: 2.2, top: '45%', left: '1.5%',
     pinColor: '#1a5c1a', bg: '#ffffff', accent: '#14532d',
     stickerSrc: bridgeImg, stickerSize: 168,
     detail: {
@@ -239,7 +239,7 @@ const PROJECTS: Project[] = [
   {
     id: 6, num: '06', title: 'Chinese Drama Society at Cornell', role: 'Visual Design / Creative Direction',
     category: 'VISUAL DESIGN', cardType: 'sticker',
-    rotation: 2.0, top: '65%', left: '2%',
+    rotation: 2.0, top: '70%', left: '1%',
     pinColor: '#8b1a1a', bg: '#ffffff', accent: '#7c2d12',
     stickerSrc: cdscImg, stickerSize: 145,
     detail: {
@@ -1242,6 +1242,7 @@ export default function App() {
   const boardScale = isMobile ? 1 : Math.max(0.8, Math.min(1.6, viewport.width / 1200, viewport.height / 720))
 
   return (
+    <>
     <div
       className="cork-board"
       style={{ width: isMobile ? '100vw' : `${viewport.width / boardScale}px`, height: isMobile ? 'auto' : `${viewport.height / boardScale}px`, minHeight: isMobile ? '100vh' : undefined, overflow: isMobile ? 'auto' : 'hidden', display: 'flex', flexDirection: isMobile ? 'column' : 'row', fontFamily: "'Nunito', sans-serif", zoom: boardScale }}
@@ -1430,12 +1431,14 @@ export default function App() {
         )}
       </div>
 
+    </div>
+
       {/* ── Modals ───────────────────────────────────────────────────────────── */}
       {showTravel && <TravelModal onClose={() => setShowTravel(false)} />}
       {showFilm && <FilmStripModal onClose={() => setShowFilm(false)} />}
       {showBio && <BioModal onClose={() => setShowBio(false)} />}
       {showMap && <PlacesModal onClose={() => setShowMap(false)} />}
       {activeProject && <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />}
-    </div>
+    </>
   )
 }
