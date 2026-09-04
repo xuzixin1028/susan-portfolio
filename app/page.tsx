@@ -212,7 +212,7 @@ const PROJECTS: Project[] = [
       problem: 'Maintenance records were stored across disconnected legacy systems, making it nearly impossible to prioritize repairs or allocate resources efficiently.',
       process: 'Audited existing data infrastructure across 5 bridge facilities, designed a unified database schema, built automated reporting scripts in Python, and documented the full system.',
       impact: "Reduced time-to-report for maintenance inspections by 65%. New data system is now the foundation for the NYSBA's ongoing digital modernization initiative.",
-      takeaways: 'Technology in public infrastructure demands extreme reliability and thorough documentation — decisions affect physical safety, not just software behavior.',
+      takeaways: 'Note: Due to the nature of my work with a New York State government authority, internal projects, systems, and materials are confidential and cannot be displayed publicly.',
       pdfPage: 6,
     }
   },
@@ -528,9 +528,7 @@ function BioModal({ onClose }: { onClose: () => void }) {
 
         <button
           onClick={onClose}
-          style={{ position: 'absolute', top: '18px', right: '20px', background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.7)', padding: '4px 8px', transition: 'color 0.15s ease', zIndex: 2 }}
-          onMouseEnter={(e) => { (e.target as HTMLButtonElement).style.color = '#fff' }}
-          onMouseLeave={(e) => { (e.target as HTMLButtonElement).style.color = 'rgba(255,255,255,0.7)' }}
+          style={{ position: 'absolute', top: '18px', right: '20px', background: 'rgba(255,255,255,0.82)', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', letterSpacing: '0.14em', color: '#000', padding: '4px 8px', transition: 'color 0.15s ease', zIndex: 2 }}
         >
           BACK TO BOARD ×
         </button>
@@ -540,7 +538,7 @@ function BioModal({ onClose }: { onClose: () => void }) {
           <img
             src={icelandImg}
             alt="Susan Xu"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 18%', display: 'block' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 38%', display: 'block' }}
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.35) 100%)' }} />
         </div>
@@ -983,7 +981,7 @@ function PlacesModal({ onClose }: { onClose: () => void }) {
 
         <button
           onClick={onClose}
-          style={{ position: 'absolute', top: '18px', right: '20px', background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', letterSpacing: '0.14em', color: '#c0c0c0', padding: '4px 8px', transition: 'color 0.15s ease' }}
+          style={{ position: 'absolute', top: '18px', right: '20px', background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', letterSpacing: '0.14em', color: '#000', padding: '4px 8px', transition: 'color 0.15s ease' }}
           onMouseEnter={(e) => { (e.target as HTMLButtonElement).style.color = '#555' }}
           onMouseLeave={(e) => { (e.target as HTMLButtonElement).style.color = '#c0c0c0' }}
         >
@@ -1062,7 +1060,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
         <button
           onClick={onClose}
-          style={{ position: 'absolute', top: '18px', right: '20px', background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', letterSpacing: '0.14em', color: '#c0c0c0', padding: '4px 8px', transition: 'color 0.15s ease' }}
+          style={{ position: 'absolute', top: '18px', right: '20px', background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', letterSpacing: '0.14em', color: '#000', padding: '4px 8px', transition: 'color 0.15s ease' }}
           onMouseEnter={(e) => { (e.target as HTMLButtonElement).style.color = '#555' }}
           onMouseLeave={(e) => { (e.target as HTMLButtonElement).style.color = '#c0c0c0' }}
         >
@@ -1136,7 +1134,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '8px', letterSpacing: '0.18em', color: '#c0c0c0', marginBottom: '9px' }}>
               {label.toUpperCase()}
             </div>
-            <p style={{ fontFamily: "'Nunito', sans-serif", fontSize: '14px', color: '#333', lineHeight: 1.78, margin: 0 }}>
+            <p style={{ fontFamily: "'Nunito', sans-serif", fontSize: '14px', color: '#333', lineHeight: 1.78, margin: 0, fontStyle: content?.startsWith('Note:') ? 'italic' : 'normal' }}>
               {content}
             </p>
           </div>
@@ -1229,18 +1227,24 @@ export default function App() {
   const [showTravel, setShowTravel] = useState(false)
   const [highlightedId, setHighlightedId] = useState<number | null>(null)
   const [isMobile, setIsMobile] = useState(false)
+  const [viewport, setViewport] = useState({ width: 1440, height: 900 })
 
   useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768)
+    const handler = () => {
+      setIsMobile(window.innerWidth < 768)
+      setViewport({ width: window.innerWidth, height: window.innerHeight })
+    }
     handler()
     window.addEventListener('resize', handler)
     return () => window.removeEventListener('resize', handler)
   }, [])
 
+  const boardScale = isMobile ? 1 : Math.max(0.8, Math.min(1.6, viewport.width / 1200, viewport.height / 720))
+
   return (
     <div
       className="cork-board"
-      style={{ width: '100vw', height: isMobile ? 'auto' : '100vh', minHeight: '100vh', overflow: isMobile ? 'auto' : 'hidden', display: 'flex', flexDirection: isMobile ? 'column' : 'row', fontFamily: "'Nunito', sans-serif" }}
+      style={{ width: isMobile ? '100vw' : `${viewport.width / boardScale}px`, height: isMobile ? 'auto' : `${viewport.height / boardScale}px`, minHeight: isMobile ? '100vh' : undefined, overflow: isMobile ? 'auto' : 'hidden', display: 'flex', flexDirection: isMobile ? 'column' : 'row', fontFamily: "'Nunito', sans-serif", zoom: boardScale }}
     >
       {/* ── Left Sidebar ────────────────────────────────────────────────────── */}
       <div style={{ width: isMobile ? '100%' : '26%', maxWidth: isMobile ? '100%' : '308px', minWidth: isMobile ? 'unset' : '218px', height: isMobile ? 'auto' : '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: isMobile ? '32px 22px 0' : '26px 12px 26px 26px', flexShrink: 0 }}>
