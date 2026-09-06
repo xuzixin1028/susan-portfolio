@@ -142,7 +142,7 @@ const PROJECTS: Project[] = [
   {
     id: 2, num: '02', title: 'Altheros Capital', role: 'UI/UX Design Administrative Lead',
     category: 'UX DESIGN', cardType: 'sticker',
-    rotation: 4.0, top: '56%', left: '57%',
+    rotation: 4.0, top: '49%', left: '34%',
     pinColor: '#0d3880', bg: '#ffffff', accent: '#1a1a1a',
     stickerSrc: acImg, stickerSize: 115,
     detail: {
@@ -168,9 +168,9 @@ const PROJECTS: Project[] = [
   {
     id: 3, num: '03', title: 'Medium Design Collective', role: 'Product / Project Management',
     category: 'PRODUCT DESIGN', cardType: 'sticker',
-    rotation: -1.8, top: '24%', left: '55%',
+    rotation: -1.8, top: '84%', left: '42%',
     pinColor: '#c2400a', bg: '#1a1a1a', accent: '#888888',
-    stickerSrc: mdcImg, stickerSize: 152,
+    stickerSrc: mdcImg, stickerSize: 108,
     detail: {
       timeline: 'Oct. 2024 – Dec. 2025',
       overview: "Designing and leading client projects from brand identity to digital experiences. Through Medium Design Collective, I worked across client projects as both a product designer and project manager, translating client needs into visual identities and digital experiences while collaborating with multidisciplinary design teams.",
@@ -214,9 +214,9 @@ const PROJECTS: Project[] = [
   {
     id: 5, num: '05', title: 'Develop For Good', role: 'Product Design / Technology',
     category: 'PRODUCT DESIGN', cardType: 'sticker',
-    rotation: -3.2, top: '31%', left: '31%',
+    rotation: -3.2, top: '8%', left: '67%',
     pinColor: '#cc2200', bg: '#0d1b4e', accent: '#e91e8c',
-    stickerSrc: dfgImg, stickerSize: 98,
+    stickerSrc: dfgImg, stickerSize: 132,
     detail: {
       timeline: 'Spring 2023',
       overview: "Designed and built technology solutions for a nonprofit partner through Develop for Good's national volunteer program connecting students with social impact organizations.",
@@ -1393,7 +1393,7 @@ export default function App() {
             <SuitcaseCard onOpen={() => setShowTravel(true)} />
 
             {/* Yami sticker */}
-            <div onClick={() => setActiveProject(YAMI_PROJECT)} style={{ position: 'absolute', top: '40%', left: '34%', width: '80px', zIndex: 2, transform: 'rotate(4deg)', cursor: 'pointer' }}>
+            <div onClick={() => setActiveProject(YAMI_PROJECT)} style={{ position: 'absolute', top: '23%', left: '31%', width: '80px', zIndex: 2, transform: 'rotate(4deg)', cursor: 'pointer' }}>
               <PushPin color="#cc2222" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={yamiImg} alt="Yami" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
             </div>
