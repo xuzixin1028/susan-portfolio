@@ -219,7 +219,7 @@ const PROJECTS: Project[] = [
   {
     id: 5, num: '05', title: 'Develop For Good', role: 'Product Design / Technology',
     category: 'PRODUCT DESIGN', cardType: 'sticker',
-    rotation: -3.2, top: '41%', left: '27%',
+    rotation: -3.2, top: '31%', left: '31%',
     pinColor: '#cc2200', bg: '#0d1b4e', accent: '#e91e8c',
     stickerSrc: dfgImg, stickerSize: 98,
     detail: {
