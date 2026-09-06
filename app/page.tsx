@@ -262,7 +262,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 8, num: '08', title: 'INFO 3450', role: 'Human Computer Interaction',
-    category: 'RESEARCH', cardType: 'index',
+    category: 'COURSEWORK', cardType: 'index',
     rotation: 1.5, top: '64%', left: '37%',
     pinColor: '#1e40af', bg: '#f0f4ff', accent: '#1e3a8a',
     detail: {
@@ -401,7 +401,7 @@ function ProjectCard({ project, highlighted, onClick, onHover }: CardProps) {
         left: project.left,
         width: '212px',
         background: project.bg,
-        padding: '13px 15px 11px',
+        padding: '13px 15px 9px',
         borderRadius: '1px',
         border: '1px solid rgba(0,0,0,0.07)',
         transform: `rotate(${active ? project.rotation * 0.12 : project.rotation}deg) translateY(${active ? -6 : 0}px)`,
@@ -425,15 +425,11 @@ function ProjectCard({ project, highlighted, onClick, onHover }: CardProps) {
       <div style={{ fontFamily: "'Playfair Display', serif", fontSize: project.cardType === 'index' ? '20px' : '16px', fontWeight: 700, color: '#1a1a1a', lineHeight: 1.2, marginBottom: '4px' }}>
         {project.title}
       </div>
-      <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '10px', color: '#666', marginBottom: '13px', lineHeight: 1.4 }}>
+      <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '10px', color: '#666', marginBottom: '7px', lineHeight: 1.4 }}>
         {project.role}
       </div>
 
-      {[1, 0.55, 0.35].map((op, i) => (
-        <div key={i} style={{ height: '1px', background: `rgba(172,148,102,${op * 0.8})`, marginBottom: '7px', width: i === 2 ? '52%' : '100%' }} />
-      ))}
-
-      <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '0.1em', color: project.accent, opacity: active ? 1 : 0, transition: 'opacity 0.2s ease', marginTop: '8px' }}>
+      <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', lineHeight: 1.2, letterSpacing: '0.1em', color: project.accent, opacity: active ? 1 : 0, transition: 'opacity 0.2s ease', marginTop: '2px' }}>
         View Project →
       </div>
     </div>
