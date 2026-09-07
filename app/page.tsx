@@ -1750,8 +1750,8 @@ export default function App() {
             SUSAN XU
           </div>
           <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '11px', color: '#444', lineHeight: 1.45, marginBottom: '6px' }}>
-            <div>Information Science, Systems, and Technology</div>
-            <div>@ Cornell Engineering</div>
+            <div>Information Science, Systems, and</div>
+            <div>Technology @ Cornell Engineering</div>
           </div>
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '8.5px', letterSpacing: '0.1em', color: '#a0a0a0', marginBottom: '16px' }}>
             Data Science + UX Design
