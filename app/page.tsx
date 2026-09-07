@@ -1402,6 +1402,44 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     )
   }
 
+  if (project.id === 8) {
+    return (
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(800px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(.08deg)' }}>
+          <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
+
+          <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>INFO 3450 Human Computer Interaction</h2>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Turning user research into an iterative digital product.</p>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '26px' }}>
+            {[
+              ['MY ROLE', 'Product Designer'],
+              ['TIMELINE', 'Fall 2025'],
+              ['TEAM', '4 Designers'],
+              ['TOOLS', 'Figma · FigJam'],
+            ].map(([label, value]) => (
+              <div key={label}><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>{label}</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>{value}</p></div>
+            ))}
+          </div>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div style={{ display: 'grid', gap: '18px', color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>
+            <p style={{ margin: 0 }}>Working in a four-person design team, I helped investigate user needs, translate research findings into product decisions, and iterate on our interface through prototyping and usability testing.</p>
+            <p style={{ margin: 0 }}>The project gave me the opportunity to approach design as an iterative process, balancing user needs, interaction decisions, and technical constraints rather than treating the interface as the final step.</p>
+          </div>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: '34px' }}>
+            <a href="https://drive.google.com/file/d/1gECj31k4ez8fCcnRmxXayhcBmzQQ84PZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ background: '#1e3a8a', color: '#fff', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROJECT ↗</a>
+            <a href="https://www.figma.com/proto/90YuYZiRLxPAye4jqaXNwc/INFO-3450-Figma-Design--Copy-?node-id=87-122&starting-point-node-id=5%3A2&t=Z0CHe4ajHPgqP8Do-1" target="_blank" rel="noopener noreferrer" style={{ background: '#17120d', color: '#fff', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROTOTYPE ↗</a>
+          </div>
+        </article>
+      </div>
+    )
+  }
+
   return (
     <div
       onClick={onClose}
