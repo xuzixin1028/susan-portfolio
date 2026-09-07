@@ -509,8 +509,6 @@ function BioModal({ onClose }: { onClose: () => void }) {
         className="modal-scroll"
         style={{ background: '#ffffff', width: 'min(680px, 92vw)', maxHeight: '88vh', overflowY: 'auto', borderRadius: '1px', padding: '0 0 48px', position: 'relative', boxShadow: '0 24px 80px rgba(0,0,0,0.42), 0 8px 24px rgba(0,0,0,0.2)', transform: 'rotate(-0.3deg)' }}
       >
-        <PushPin color="#c2400a" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
-
         <button
           onClick={onClose}
           style={{ position: 'absolute', top: '18px', right: '20px', background: '#17120d', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', color: '#fff', padding: '8px 12px', transition: 'all 0.15s ease', zIndex: 2, boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}
@@ -962,8 +960,6 @@ function PlacesModal({ onClose }: { onClose: () => void }) {
         className="modal-scroll"
         style={{ background: '#ffffff', width: 'min(640px, 92vw)', maxHeight: '88vh', overflowY: 'auto', borderRadius: '1px', padding: '54px 50px 48px', position: 'relative', boxShadow: '0 24px 80px rgba(0,0,0,0.42), 0 8px 24px rgba(0,0,0,0.2)', transform: 'rotate(0.3deg)' }}
       >
-        <PushPin color="#1e40af" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
-
         <button
           onClick={onClose}
           style={{ position: 'absolute', top: '18px', right: '20px', background: '#17120d', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', color: '#fff', padding: '8px 12px', transition: 'all 0.15s ease', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}
@@ -1035,7 +1031,6 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     return (
       <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
         <article onClick={(e) => e.stopPropagation()} className="modal-scroll ibm-case" style={{ background: '#fff', width: 'min(780px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(-.2deg)' }}>
-          <PushPin color="#cc2200" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>IBM</h2>
@@ -1067,7 +1062,6 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     return (
       <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
         <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(780px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(.15deg)' }}>
-          <PushPin color="#0d3880" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>Altheros Capital</h2>
@@ -1133,7 +1127,6 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     return (
       <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
         <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(800px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 58px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(-.12deg)' }}>
-          <PushPin color="#c2400a" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>Medium Design Collective</h2>
@@ -1172,7 +1165,6 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     return (
       <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
         <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(780px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(.12deg)' }}>
-          <PushPin color="#1a5c1a" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>New York State Bridge Authority</h2>
@@ -1208,8 +1200,6 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         className="modal-scroll"
         style={{ background: '#ffffff', width: 'min(700px, 92vw)', maxHeight: '88vh', overflowY: 'auto', borderRadius: '1px', padding: '54px 50px 48px', position: 'relative', boxShadow: '0 24px 80px rgba(0,0,0,0.42), 0 8px 24px rgba(0,0,0,0.2)', transform: 'rotate(-0.3deg)' }}
       >
-        <PushPin color={project.pinColor} style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
-
         <button
           onClick={onClose}
           style={{ position: 'absolute', top: '18px', right: '20px', background: '#17120d', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', color: '#fff', padding: '8px 12px', transition: 'all 0.15s ease', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}
@@ -1423,51 +1413,27 @@ export default function App() {
           <div style={{ height: '1px', background: 'rgba(0,0,0,0.1)', marginBottom: '13px' }} />
 
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '7px', letterSpacing: '0.16em', color: '#b0b0b0', marginBottom: '9px' }}>
-            WORK EXPERIENCE
+            TABLE OF CONTENTS
           </div>
 
           <div style={{ flex: 1, overflow: 'hidden' }}>
-            {[...PROJECTS.filter((p) => p.id <= 6), YAMI_PROJECT, NOTION_PROJECT].map((p) => (
+            {[...PROJECTS, YAMI_PROJECT, NOTION_PROJECT].map((p) => (
               <div
                 key={p.id}
                 onClick={() => setActiveProject(p)}
                 onMouseEnter={() => setHighlightedId(p.id)}
                 onMouseLeave={() => setHighlightedId(null)}
-                style={{ display: 'flex', gap: '8px', alignItems: 'baseline', padding: '3px 0', cursor: 'pointer', opacity: highlightedId === null || highlightedId === p.id ? 1 : 0.35, transition: 'opacity 0.15s ease', borderBottom: '1px solid rgba(0,0,0,0.055)' }}
+                style={{ display: 'flex', gap: '8px', alignItems: 'baseline', padding: '4px 0', cursor: 'pointer', opacity: highlightedId === null || highlightedId === p.id ? 1 : 0.35, transition: 'opacity 0.15s ease', borderBottom: '1px solid rgba(0,0,0,0.055)' }}
               >
                 <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: '#c0c0c0', flexShrink: 0, width: '20px' }}>
                   {p.num}
                 </span>
-                <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: '10px', color: highlightedId === p.id ? '#1a1a1a' : '#555', fontWeight: highlightedId === p.id ? 700 : 500, lineHeight: 1.3 }}>
+                <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: '10.5px', color: highlightedId === p.id ? '#1a1a1a' : '#555', fontWeight: highlightedId === p.id ? 700 : 500, lineHeight: 1.38 }}>
                   {tocTitle(p)}
                 </span>
               </div>
             ))}
 
-            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '7px', letterSpacing: '0.16em', color: '#b0b0b0', margin: '11px 0 5px' }}>
-              OTHERS
-            </div>
-
-            {PROJECTS.filter((p) => p.id >= 7).map((p) => (
-              <div key={p.id} onClick={() => setActiveProject(p)} onMouseEnter={() => setHighlightedId(p.id)} onMouseLeave={() => setHighlightedId(null)} style={{ display: 'flex', gap: '8px', alignItems: 'baseline', padding: '3px 0', cursor: 'pointer', opacity: highlightedId === null || highlightedId === p.id ? 1 : .35, transition: 'opacity .15s ease' }}>
-                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: '#c0c0c0', flexShrink: 0, width: '20px' }}>{p.num}</span>
-                <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: '10px', color: highlightedId === p.id ? '#1a1a1a' : '#555', fontWeight: highlightedId === p.id ? 700 : 500, lineHeight: 1.3 }}>{tocTitle(p)}</span>
-              </div>
-            ))}
-
-            {[
-              { label: 'My Photo · About Me', action: () => setShowBio(true) },
-              { label: 'Fujifilm Camera · Film', action: () => setShowFilm(true) },
-              { label: 'Suitcase · Travel & Friends', action: () => setShowTravel(true) },
-              { label: "Map · Places I've Been", action: () => setShowMap(true) },
-              { label: 'Cornell Flag' },
-              { label: 'Edinburgh Flag' },
-            ].map((item) => (
-              <div key={item.label} onClick={item.action} style={{ display: 'flex', gap: '8px', alignItems: 'baseline', padding: '2px 0', cursor: item.action ? 'pointer' : 'default' }}>
-                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: '#c0c0c0', flexShrink: 0, width: '20px' }}>·</span>
-                <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: '9.5px', color: '#555', fontWeight: 500, lineHeight: 1.25 }}>{item.label}</span>
-              </div>
-            ))}
           </div>
 
           <div style={{ height: '1px', background: 'rgba(0,0,0,0.1)', margin: '14px 0 12px' }} />
