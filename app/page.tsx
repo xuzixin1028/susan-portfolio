@@ -1190,6 +1190,64 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     )
   }
 
+  if (project.id === 5) {
+    const developProjects = [
+      {
+        name: 'Climate Donor', summary: 'Designing and building technology for more accessible climate giving.',
+        role: 'Designer · Developer', timeline: 'May – Aug. 2024', team: '5 Developers',
+        paragraphs: ['As a designer and developer on a five-person development team, I contributed to the product experience for Climate Donor, working across design and implementation to help translate product requirements into a digital experience. Such as designing to improve the UI and implement Admin Dashboard and Project Owner Dashboard'],
+        link: 'https://docs.google.com/presentation/d/1b9fhxZrU-9FvxavxaELBT948hnGnNOvjmqkbhcFY8Jo/edit?slide=id.gc6f73a04f_0_0#slide=id.gc6f73a04f_0_0',
+      },
+      {
+        name: 'Pride Family', summary: 'Designing a digital community centered around connection and belonging.',
+        role: 'Product Designer', timeline: 'Dec. 2024 – Feb. 2025', team: '6 Designers',
+        paragraphs: [
+          'I joined a six-person design team working on a web experience designed to connect disowned LGBTQIA+ individuals with supportive families.',
+          'Our challenge was to translate sensitive user needs into an experience that felt approachable, welcoming, and human, while helping users build meaningful connections through the platform.',
+        ],
+        link: 'https://developforgood.notion.site/The-Pride-Family-Designing-A-Web-App-Connecting-Disowned-LGBTQIA-Individuals-with-Supportive-Famil-197fbe7117c080f598a1f78b3a5fd9e6',
+      },
+    ]
+
+    return (
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(800px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 58px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(.1deg)' }}>
+          <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
+
+          <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>Develop for Good</h2>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Designing digital products for mission-driven organizations and the communities they serve.</p>
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+          <p style={{ margin: 0, color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>Through Develop for Good, I worked across two nonprofit projects as a product designer and developer, translating organizational needs into thoughtful digital experiences while collaborating with multidisciplinary design and development teams.</p>
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div style={{ display: 'grid', gap: '22px' }}>
+            {developProjects.map((item) => (
+              <section key={item.name} style={{ border: '1px solid #dfdfdf', borderTop: '4px solid #e91e8c', padding: '26px 28px 28px', background: '#fbfaf7', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px' }}>
+                  <div>
+                    <h3 style={{ margin: '0 0 7px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '27px', lineHeight: 1.1 }}>{item.name}</h3>
+                    <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.6 }}>{item.summary}</p>
+                  </div>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ flexShrink: 0, background: '#17120d', color: '#fff', textDecoration: 'none', padding: '8px 11px', fontFamily: "'Space Mono', monospace", fontSize: '8px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROJECT ↗</a>
+                </div>
+                <div style={{ height: '1px', background: '#ddd', margin: '22px 0' }} />
+                <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr', gap: '24px' }}>
+                  {[['MY ROLE', item.role], ['TIMELINE', item.timeline], ['TEAM', item.team]].map(([label, value]) => (
+                    <div key={label}><b style={{ display: 'block', marginBottom: '7px', fontFamily: "'Noto Sans', sans-serif", fontSize: '9px', fontWeight: 800, letterSpacing: '.12em' }}>{label}</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '12px', lineHeight: 1.6, color: '#222' }}>{value}</p></div>
+                  ))}
+                </div>
+                <div style={{ height: '1px', background: '#ddd', margin: '22px 0' }} />
+                <div style={{ display: 'grid', gap: '14px' }}>
+                  {item.paragraphs.map((paragraph) => <p key={paragraph} style={{ margin: 0, color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.75 }}>{paragraph}</p>)}
+                </div>
+              </section>
+            ))}
+          </div>
+        </article>
+      </div>
+    )
+  }
+
   return (
     <div
       onClick={onClose}
