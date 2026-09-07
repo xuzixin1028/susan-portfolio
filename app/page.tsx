@@ -1270,7 +1270,7 @@ export default function App() {
         <div style={{ width: '100%', height: isMobile ? 'auto' : '100%', background: '#fef9d2', position: 'relative', boxShadow: '5px 7px 24px rgba(0,0,0,0.22), 2px 3px 9px rgba(0,0,0,0.12)', transform: 'rotate(-0.5deg)', padding: '36px 24px 26px', display: 'flex', flexDirection: 'column' }}>
           <PushPin color="#0d3880" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
 
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '28px', fontWeight: 700, color: '#1a1a1a', lineHeight: 1.05, marginBottom: '5px' }}>
+          <div style={{ fontFamily: "'Valley Sans', 'Arial Narrow', sans-serif", fontSize: '36px', fontWeight: 700, color: '#1a1a1a', lineHeight: 1, marginBottom: '7px', letterSpacing: '-0.025em' }}>
             SUSAN XU
           </div>
           <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '11px', color: '#444', lineHeight: 1.5, marginBottom: '1px' }}>
