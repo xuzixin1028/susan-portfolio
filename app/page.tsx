@@ -1749,8 +1749,9 @@ export default function App() {
           <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '42px', fontWeight: 700, color: '#1a1a1a', lineHeight: .95, marginBottom: '10px', letterSpacing: '-0.035em' }}>
             SUSAN XU
           </div>
-          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '8.75px', letterSpacing: '-0.055em', color: '#444', lineHeight: 1.4, marginBottom: '5px', whiteSpace: 'nowrap' }}>
-            Information Science, Systems, and Technology @ Cornell Engineering
+          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '11px', color: '#444', lineHeight: 1.45, marginBottom: '6px' }}>
+            <div>Information Science, Systems, and Technology</div>
+            <div>@ Cornell Engineering</div>
           </div>
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '8.5px', letterSpacing: '0.1em', color: '#a0a0a0', marginBottom: '16px' }}>
             Data Science + UX Design
