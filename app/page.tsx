@@ -168,7 +168,7 @@ const PROJECTS: Project[] = [
   {
     id: 3, num: '03', title: 'Medium Design Collective', role: 'Product / Project Management',
     category: 'PRODUCT DESIGN', cardType: 'sticker',
-    rotation: -1.8, top: '84%', left: '42%',
+    rotation: -1.8, top: '80%', left: '42%',
     pinColor: '#c2400a', bg: '#1a1a1a', accent: '#888888',
     stickerSrc: mdcImg, stickerSize: 108,
     detail: {
