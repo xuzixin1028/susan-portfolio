@@ -142,7 +142,7 @@ const PROJECTS: Project[] = [
   {
     id: 2, num: '02', title: 'Altheros Capital', role: 'UI/UX Design Administrative Lead',
     category: 'UX DESIGN', cardType: 'sticker',
-    rotation: 4.0, top: '49%', left: '30%',
+    rotation: 4.0, top: '49%', left: '33%',
     pinColor: '#0d3880', bg: '#ffffff', accent: '#1a1a1a',
     stickerSrc: acImg, stickerSize: 115,
     detail: {
@@ -248,7 +248,7 @@ const PROJECTS: Project[] = [
   {
     id: 7, num: '07', title: 'INFO 1998', role: 'Digital Product Design',
     category: 'COURSEWORK', cardType: 'index',
-    rotation: 1.8, top: '44%', left: '43%',
+    rotation: 1.8, top: '39%', left: '43%',
     pinColor: '#5b21b6', bg: '#f5f0ff', accent: '#4c1d95',
     detail: {
       timeline: 'Fall 2022',
@@ -908,7 +908,7 @@ function MapCard({ onOpen }: { onOpen: () => void }) {
     <div
       style={{
         position: 'absolute',
-        top: '18%',
+        top: '9%',
         left: '37%',
         width: '246px',
         background: '#ffffff',
@@ -1432,8 +1432,8 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           </div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: '34px' }}>
-            <a href="https://drive.google.com/file/d/1gECj31k4ez8fCcnRmxXayhcBmzQQ84PZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ background: '#f0f4ff', color: '#1e3a8a', border: '1px solid #cbd7f2', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROJECT ↗</a>
-            <a href="https://www.figma.com/proto/90YuYZiRLxPAye4jqaXNwc/INFO-3450-Figma-Design--Copy-?node-id=87-122&starting-point-node-id=5%3A2&t=Z0CHe4ajHPgqP8Do-1" target="_blank" rel="noopener noreferrer" style={{ background: '#f0f4ff', color: '#1e3a8a', border: '1px solid #cbd7f2', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROTOTYPE ↗</a>
+            <a href="https://drive.google.com/file/d/1gECj31k4ez8fCcnRmxXayhcBmzQQ84PZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ background: '#1e3a8a', color: '#fff', border: '1px solid #1e3a8a', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROJECT ↗</a>
+            <a href="https://www.figma.com/proto/90YuYZiRLxPAye4jqaXNwc/INFO-3450-Figma-Design--Copy-?node-id=87-122&starting-point-node-id=5%3A2&t=Z0CHe4ajHPgqP8Do-1" target="_blank" rel="noopener noreferrer" style={{ background: '#1e3a8a', color: '#fff', border: '1px solid #1e3a8a', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROTOTYPE ↗</a>
           </div>
         </article>
       </div>
@@ -1471,6 +1471,32 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <div style={{ marginTop: '34px' }}>
             <a href="https://docs.google.com/presentation/d/1k9oLlKgfc7v7kqiw2zOyQjWGYr4ZTzpjVkKJLI-6tbA/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', background: '#78350f', color: '#fff', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROJECT ↗</a>
           </div>
+        </article>
+      </div>
+    )
+  }
+
+  if (project.id === 10 || project.id === 11) {
+    const isYami = project.id === 10
+    const title = isYami ? 'Yami' : 'Notion'
+    const summary = isYami
+      ? 'Bringing Yami to Cornell through content, community, and campus experiences.'
+      : 'Connecting students with tools for better ways to learn, organize, and create.'
+    const timeline = isYami ? 'Campus Ambassador · Sept. 2025 – Present' : 'Campus Ambassador · Sept. 2025 – May 2026'
+    const description = isYami
+      ? "As a Campus Ambassador, I create social media content and support in-person activations that introduce Yami products and campaigns to Cornell's student community."
+      : 'As a Campus Ambassador, I promote Notion through social media and campus events, helping students discover ways to incorporate the platform into their academic and creative workflows.'
+
+    return (
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(700px, 94vw)', maxHeight: '88vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: `rotate(${isYami ? '.1deg' : '-.1deg'})` }}>
+          <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
+          <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>{title}</h2>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>{summary}</p>
+          <div style={{ height: '1px', background: '#ddd', margin: '32px 0' }} />
+          <p style={{ margin: 0, fontFamily: "'Noto Sans', sans-serif", fontSize: '12px', fontWeight: 800, letterSpacing: '.04em', color: '#222' }}>{timeline}</p>
+          <div style={{ height: '1px', background: '#ddd', margin: '32px 0' }} />
+          <p style={{ margin: 0, color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>{description}</p>
         </article>
       </div>
     )
