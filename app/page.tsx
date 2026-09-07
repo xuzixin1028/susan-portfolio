@@ -1134,9 +1134,11 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             <img src={project.stickerSrc} alt={project.title} style={{ height: '44px', width: 'auto', filter: 'drop-shadow(1px 2px 5px rgba(0,0,0,0.18))', flexShrink: 0 }} />
           )}
           <div>
-            <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '8px', letterSpacing: '0.18em', color: project.accent, background: project.accent + '16', padding: '3px 9px', borderRadius: '2px', fontWeight: 700, display: 'inline-block', marginBottom: '5px' }}>
-              {project.category}
-            </span>
+            {project.id !== 10 && project.id !== 11 && (
+              <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '8px', letterSpacing: '0.18em', color: project.accent, background: project.accent + '16', padding: '3px 9px', borderRadius: '2px', fontWeight: 700, display: 'inline-block', marginBottom: '5px' }}>
+                {project.category}
+              </span>
+            )}
             <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '12px', color: '#d8d8d8', marginLeft: '10px' }}>
               {project.num}
             </span>
@@ -1146,9 +1148,11 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', fontWeight: 700, color: '#1a1a1a', margin: '0 0 5px', lineHeight: 1.05 }}>
           {project.title}
         </h2>
-        <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '15px', color: '#666', marginBottom: '7px' }}>
-          {project.role}
-        </div>
+        {project.id !== 10 && project.id !== 11 && (
+          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '15px', color: '#666', marginBottom: '7px' }}>
+            {project.role}
+          </div>
+        )}
         <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '10px', color: '#bbb', marginBottom: '30px', letterSpacing: '0.1em' }}>
           {project.detail.timeline}
         </div>
@@ -1277,6 +1281,7 @@ export default function App() {
   const [showFilm, setShowFilm] = useState(false)
   const [showTravel, setShowTravel] = useState(false)
   const [highlightedId, setHighlightedId] = useState<number | null>(null)
+  const [hoveredAmbassador, setHoveredAmbassador] = useState<'yami' | 'notion' | null>(null)
   const [isMobile, setIsMobile] = useState(false)
   const [viewport, setViewport] = useState({ width: 1440, height: 900 })
 
@@ -1332,7 +1337,7 @@ export default function App() {
           </div>
 
           <div style={{ flex: 1, overflow: 'hidden' }}>
-            {PROJECTS.map((p) => (
+            {[...PROJECTS, YAMI_PROJECT, NOTION_PROJECT].map((p) => (
               <div
                 key={p.id}
                 onClick={() => setActiveProject(p)}
@@ -1438,23 +1443,25 @@ export default function App() {
             {/* Yami sticker */}
             <div
               onClick={() => setActiveProject(YAMI_PROJECT)}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'rotate(.4deg) translateY(-10px) scale(1.04)'; e.currentTarget.style.zIndex = '20' }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'rotate(4deg) translateY(0) scale(1)'; e.currentTarget.style.zIndex = '2' }}
-              style={{ position: 'absolute', top: '23%', left: '29%', width: '80px', zIndex: 2, transform: 'rotate(4deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
+              onMouseEnter={() => setHoveredAmbassador('yami')}
+              onMouseLeave={() => setHoveredAmbassador(null)}
+              style={{ position: 'absolute', top: '23%', left: '29%', width: '80px', zIndex: hoveredAmbassador === 'yami' ? 20 : 2, transform: hoveredAmbassador === 'yami' ? 'rotate(.4deg) translateY(-10px) scale(1.04)' : 'rotate(4deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
             >
               <PushPin color="#cc2222" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={yamiImg} alt="Yami" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
+              <div style={{ marginTop: '7px', textAlign: 'center', whiteSpace: 'nowrap', fontFamily: "'Space Mono', monospace", fontSize: '8px', fontWeight: 700, letterSpacing: '.08em', color: '#17120d', opacity: hoveredAmbassador === 'yami' ? 1 : 0, transform: hoveredAmbassador === 'yami' ? 'translateY(0)' : 'translateY(-4px)', transition: 'opacity .18s ease, transform .18s ease', pointerEvents: 'none' }}>CAMPUS AMBASSADOR</div>
             </div>
 
             {/* Notion sticker */}
             <div
               onClick={() => setActiveProject(NOTION_PROJECT)}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'rotate(-.3deg) translateY(-10px) scale(1.04)'; e.currentTarget.style.zIndex = '20' }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'rotate(-3deg) translateY(0) scale(1)'; e.currentTarget.style.zIndex = '2' }}
-              style={{ position: 'absolute', top: '12%', left: '23%', width: '88px', zIndex: 2, transform: 'rotate(-3deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
+              onMouseEnter={() => setHoveredAmbassador('notion')}
+              onMouseLeave={() => setHoveredAmbassador(null)}
+              style={{ position: 'absolute', top: '12%', left: '23%', width: '88px', zIndex: hoveredAmbassador === 'notion' ? 20 : 2, transform: hoveredAmbassador === 'notion' ? 'rotate(-.3deg) translateY(-10px) scale(1.04)' : 'rotate(-3deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
             >
               <PushPin color="#444" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={notionImg} alt="Notion" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
+              <div style={{ marginTop: '7px', textAlign: 'center', whiteSpace: 'nowrap', fontFamily: "'Space Mono', monospace", fontSize: '8px', fontWeight: 700, letterSpacing: '.08em', color: '#17120d', opacity: hoveredAmbassador === 'notion' ? 1 : 0, transform: hoveredAmbassador === 'notion' ? 'translateY(0)' : 'translateY(-4px)', transition: 'opacity .18s ease, transform .18s ease', pointerEvents: 'none' }}>CAMPUS AMBASSADOR</div>
             </div>
 
             {/* Photo / bio card */}
