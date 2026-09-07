@@ -135,8 +135,7 @@ const PROJECTS: Project[] = [
       problem: "Product and revenue data previously lived across disconnected sources and manual Excel workflows, making it difficult for PMs to understand why deals were lost, compare account performance, and identify growth opportunities.",
       process: "We brought CRM, revenue, deployment, and usage data together through PostgreSQL and MCP, enabling PMs to explore information through natural-language queries.",
       impact: "I worked across product strategy, UX, data, and AI, defining requirements with PMs, designing dashboard experiences and workflows, and integrating AI-powered analysis with IBM Bob. Our analysis uncovered missing loss reasons in 70% of lost deals and helped surface $75M in potential annual expansion opportunities through account benchmarking.",
-      takeaways: "Note: All customer, revenue, account, and performance data shown in this portfolio case study is mock data created for demonstration purposes and does not represent actual IBM customer or business data.",
-      projectLink: 'https://antonio.ac/telosz',
+      takeaways: "Note: Due to the confidential nature of my work at IBM, the internal products, systems, and materials I created cannot be displayed publicly.",
     }
   },
   {
@@ -514,7 +513,7 @@ function BioModal({ onClose }: { onClose: () => void }) {
 
         <button
           onClick={onClose}
-          style={{ position: 'absolute', top: '18px', right: '20px', background: 'rgba(255,255,255,0.82)', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', letterSpacing: '0.14em', color: '#000', padding: '4px 8px', transition: 'color 0.15s ease', zIndex: 2 }}
+          style={{ position: 'absolute', top: '18px', right: '20px', background: '#17120d', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', color: '#fff', padding: '8px 12px', transition: 'all 0.15s ease', zIndex: 2, boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}
         >
           BACK TO BOARD ×
         </button>
@@ -977,7 +976,7 @@ function PlacesModal({ onClose }: { onClose: () => void }) {
 
         <button
           onClick={onClose}
-          style={{ position: 'absolute', top: '18px', right: '20px', background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', letterSpacing: '0.14em', color: '#000', padding: '4px 8px', transition: 'color 0.15s ease' }}
+          style={{ position: 'absolute', top: '18px', right: '20px', background: '#17120d', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', color: '#fff', padding: '8px 12px', transition: 'all 0.15s ease', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}
           onMouseEnter={(e) => { (e.target as HTMLButtonElement).style.color = '#555' }}
           onMouseLeave={(e) => { (e.target as HTMLButtonElement).style.color = '#c0c0c0' }}
         >
@@ -1047,8 +1046,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
       <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
         <article onClick={(e) => e.stopPropagation()} className="modal-scroll ibm-case" style={{ background: '#fff', width: 'min(780px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(-.2deg)' }}>
           <PushPin color="#cc2200" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
-          <button onClick={onClose} style={{ position: 'absolute', top: '22px', left: '24px', border: 0, background: 'none', color: '#000', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.12em' }}>BACK TO BOARD ×</button>
-          <a href="https://antonio.ac/telosz" target="_blank" rel="noopener noreferrer" style={{ position: 'absolute', top: '18px', right: '24px', padding: '8px 12px', background: '#0d3880', color: '#fff', textDecoration: 'none', fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.12em' }}>VIEW PROJECT ↗</a>
+          <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>IBM</h2>
           <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Turning fragmented revenue data into actionable insights for product managers.</p>
@@ -1056,9 +1054,9 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
 
           <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', gap: '28px' }}>
-            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.14em' }}>MY ROLE</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>Product Management · Product Strategy · UX Design · AI/LLM · Data Visualization</p></div>
-            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.14em' }}>TIMELINE</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>45 Days · Summer 2026</p></div>
-            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.14em' }}>TEAM</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>3 Product Management Interns</p></div>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em', textTransform: 'uppercase' }}>MY ROLE</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>Product Management · Product Strategy · UX Design · AI/LLM · Data Visualization</p></div>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em', textTransform: 'uppercase' }}>TIMELINE</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>45 Days · Summer 2026</p></div>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em', textTransform: 'uppercase' }}>TEAM</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>3 Product Management Interns</p></div>
           </div>
 
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
@@ -1068,7 +1066,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             <p style={{ margin: 0 }}>Product and revenue data previously lived across disconnected sources and manual Excel workflows, making it difficult for PMs to understand why deals were lost, compare account performance, and identify growth opportunities.</p>
             <p style={{ margin: 0 }}>We brought CRM, revenue, deployment, and usage data together through PostgreSQL and MCP, enabling PMs to explore information through natural-language queries.</p>
             <p style={{ margin: 0 }}>I worked across product strategy, UX, data, and AI, defining requirements with PMs, designing dashboard experiences and workflows, and integrating AI-powered analysis with IBM Bob. Our analysis uncovered missing loss reasons in 70% of lost deals and helped surface $75M in potential annual expansion opportunities through account benchmarking.</p>
-            <p style={{ margin: '8px 0 0', fontStyle: 'italic', color: '#555' }}>Note: All customer, revenue, account, and performance data shown in this portfolio case study is mock data created for demonstration purposes and does not represent actual IBM customer or business data.</p>
+            <p style={{ margin: '8px 0 0', fontStyle: 'italic', color: '#555' }}>Note: Due to the confidential nature of my work at IBM, the internal products, systems, and materials I created cannot be displayed publicly.</p>
           </div>
         </article>
       </div>
@@ -1089,7 +1087,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
         <button
           onClick={onClose}
-          style={{ position: 'absolute', top: '18px', right: '20px', background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', letterSpacing: '0.14em', color: '#000', padding: '4px 8px', transition: 'color 0.15s ease' }}
+          style={{ position: 'absolute', top: '18px', right: '20px', background: '#17120d', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', color: '#fff', padding: '8px 12px', transition: 'all 0.15s ease', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}
           onMouseEnter={(e) => { (e.target as HTMLButtonElement).style.color = '#555' }}
           onMouseLeave={(e) => { (e.target as HTMLButtonElement).style.color = '#c0c0c0' }}
         >
