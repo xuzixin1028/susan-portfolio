@@ -1440,6 +1440,42 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     )
   }
 
+  if (project.id === 9) {
+    return (
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(800px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(-.08deg)' }}>
+          <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
+
+          <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>INFO 4125 Project Management</h2>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Taking a product from planning to execution through cross-functional teamwork.</p>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '30px' }}>
+            {[
+              ['MY ROLE', 'Designer'],
+              ['TIMELINE', 'Fall 2025'],
+              ['TEAM', '8 Team Members'],
+            ].map(([label, value]) => (
+              <div key={label}><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>{label}</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>{value}</p></div>
+            ))}
+          </div>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div style={{ display: 'grid', gap: '18px', color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>
+            <p style={{ margin: 0 }}>I worked with an eight-person team to apply the five phases of the project management lifecycle, from initiation and planning through execution, monitoring, and project closure. Throughout the semester, we practiced project scoping, timeline and risk management, team coordination, and decision-making.</p>
+            <p style={{ margin: 0 }}>For our semester-long project, we developed Mosaic, a collaboration platform designed to help Cornell students discover projects, find peers with complementary skills, and form teams. We took the product from user research and ideation through iterative low-, mid-, and high-fidelity design to an interactive.</p>
+          </div>
+
+          <div style={{ marginTop: '34px' }}>
+            <a href="https://docs.google.com/presentation/d/1k9oLlKgfc7v7kqiw2zOyQjWGYr4ZTzpjVkKJLI-6tbA/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', background: '#78350f', color: '#fff', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROJECT ↗</a>
+          </div>
+        </article>
+      </div>
+    )
+  }
+
   return (
     <div
       onClick={onClose}
@@ -1803,7 +1839,7 @@ export default function App() {
               backTitle="Class of 2027"
               backSubtitle="Senior Year"
               backBg="#fff5f5" backAccent="#9c2020"
-              top="74%" left="61%" rotation={2.8} pinColor="#cc2200" width={190}
+              top="29%" left="1%" rotation={2.8} pinColor="#cc2200" width={190}
               aspectRatio={0.44}
             />
 
@@ -1813,7 +1849,7 @@ export default function App() {
               backTitle="Semester Abroad"
               backSubtitle="Fall 2026"
               backBg="#f0f4ff" backAccent="#1e3a8a"
-              top="29%" left="1%" rotation={-1.8} pinColor="#1e40af" width={220}
+              top="74%" left="61%" rotation={-1.8} pinColor="#1e40af" width={190}
               aspectRatio={0.40}
             />
 
