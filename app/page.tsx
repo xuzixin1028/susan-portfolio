@@ -233,7 +233,7 @@ const PROJECTS: Project[] = [
   {
     id: 6, num: '06', title: 'Chinese Drama Society at Cornell', role: 'Visual Design / Creative Direction',
     category: 'VISUAL DESIGN', cardType: 'sticker',
-    rotation: 2.0, top: '76%', left: '64%',
+    rotation: 2.0, top: '76%', left: '83%',
     pinColor: '#8b1a1a', bg: '#ffffff', accent: '#7c2d12',
     stickerSrc: cdscImg, stickerSize: 145,
     detail: {
@@ -1092,7 +1092,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <h3 style={{ margin: '0 0 18px', fontFamily: "'Noto Sans', sans-serif", fontSize: '13px', fontWeight: 800, letterSpacing: '.12em' }}>PRODUCTS SUPPORTED</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '14px' }}>
             {[...(project.detail.sections ?? [])].sort((a, b) => a.name.localeCompare(b.name)).map((product) => (
-              <section key={product.name} style={{ minHeight: '118px', border: '1px solid #dfdfdf', borderTop: '4px solid #0d3880', padding: '18px 16px', background: '#fbfaf7', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
+              <section key={product.name} style={{ minHeight: '118px', border: '1px solid #dfdfdf', borderTop: '4px solid #0d3880', padding: '18px 16px', background: '#fff', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
                 <h4 style={{ margin: '0 0 8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '15px', lineHeight: 1.25, fontWeight: 800, color: product.link ? '#1555b6' : '#000' }}>
                   {product.link ? <a href={product.link} target="_blank" rel="noopener noreferrer" style={{ color: '#1555b6', textDecoration: 'none' }}>{product.name}</a> : product.name}
                 </h4>
@@ -1140,7 +1140,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           <div style={{ display: 'grid', gap: '22px' }}>
             {mediumProjects.map((item) => (
-              <section key={item.name} style={{ border: '1px solid #dfdfdf', borderTop: '4px solid #1a1a1a', padding: '26px 28px 28px', background: '#fbfaf7', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
+              <section key={item.name} style={{ border: '1px solid #dfdfdf', borderTop: '4px solid #1a1a1a', padding: '26px 28px 28px', background: '#fff', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px' }}>
                   <div>
                     <h3 style={{ margin: '0 0 7px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '27px', lineHeight: 1.1 }}>{item.name}</h3>
@@ -1225,7 +1225,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           <div style={{ display: 'grid', gap: '22px' }}>
             {developProjects.map((item) => (
-              <section key={item.name} style={{ border: '1px solid #dfdfdf', borderTop: '4px solid #e91e8c', padding: '26px 28px 28px', background: '#fbfaf7', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
+              <section key={item.name} style={{ border: '1px solid #dfdfdf', borderTop: '4px solid #e91e8c', padding: '26px 28px 28px', background: '#fff', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px' }}>
                   <div>
                     <h3 style={{ margin: '0 0 7px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '27px', lineHeight: 1.1 }}>{item.name}</h3>
@@ -1765,7 +1765,7 @@ export default function App() {
               backTitle="Class of 2027"
               backSubtitle="Senior Year"
               backBg="#fff5f5" backAccent="#9c2020"
-              top="60%" left="13%" rotation={2.8} pinColor="#cc2200" width={230}
+              top="74%" left="61%" rotation={2.8} pinColor="#cc2200" width={190}
               aspectRatio={0.44}
             />
 
