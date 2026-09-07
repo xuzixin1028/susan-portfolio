@@ -1073,6 +1073,51 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     )
   }
 
+  if (project.id === 2) {
+    return (
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(780px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(.15deg)' }}>
+          <PushPin color="#0d3880" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
+          <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
+
+          <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>Altheros Capital</h2>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Leading design across 10 client products and a 20-person design team.</p>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', gap: '28px' }}>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>MY ROLE</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>UI/UX Design Administrative Lead</p></div>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>TIMELINE</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>Dec. 2025 – Aug. 2026</p></div>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>TEAM</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>20 Designers · 10 Projects</p></div>
+          </div>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div style={{ display: 'grid', gap: '18px', color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>
+            <p style={{ margin: 0 }}>As UI/UX Design Administrative Lead, I managed 20 designers across 10 projects, matching designers to projects based on their interests and strengths while supporting teams throughout the design process.</p>
+            <p style={{ margin: 0 }}>I worked closely with product managers, business leads, and developers to translate product needs into design direction, troubleshoot UX challenges, and coordinate design resources across teams.</p>
+            <p style={{ margin: 0 }}>Several projects progressed from early product requirements through design, development, and final client delivery.</p>
+          </div>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <h3 style={{ margin: '0 0 18px', fontFamily: "'Noto Sans', sans-serif", fontSize: '13px', fontWeight: 800, letterSpacing: '.12em' }}>PRODUCTS SUPPORTED</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px' }}>
+            {project.detail.sections?.map((product) => (
+              <section key={product.name} style={{ minHeight: '122px', border: '1px solid #dedede', borderTop: '3px solid #0d3880', padding: '16px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <h4 style={{ margin: '0 0 7px', fontFamily: "'Noto Sans', sans-serif", fontSize: '14px', fontWeight: 800, color: '#171717' }}>{product.name}</h4>
+                <p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '12px', lineHeight: 1.55, color: '#555' }}>{product.tags}</p>
+                {product.link && (
+                  <a href={product.link} target="_blank" rel="noopener noreferrer" style={{ marginTop: 'auto', paddingTop: '14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em', color: '#0d3880', textDecoration: 'none' }}>VIEW PROJECT ↗</a>
+                )}
+              </section>
+            ))}
+          </div>
+        </article>
+      </div>
+    )
+  }
+
   return (
     <div
       onClick={onClose}
