@@ -648,6 +648,9 @@ function FlagCard({ img, altText, backLabel, backTitle, backSubtitle, backBg, ba
         </div>
 
       </div>
+      <div style={{ position: 'absolute', top: 'calc(100% + 8px)', left: '50%', transform: 'translateX(-50%)', opacity: hovered && !flipped ? 1 : 0, transition: 'opacity .2s ease', pointerEvents: 'none' }}>
+        <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '7.5px', letterSpacing: '.1em', color: 'rgba(55,28,5,.85)', background: 'rgba(255,248,220,.94)', padding: '2px 10px', borderRadius: '2px', boxShadow: '0 1px 6px rgba(0,0,0,.16)', whiteSpace: 'nowrap' }}>Education →</span>
+      </div>
     </div>
   )
 }
@@ -1086,14 +1089,13 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
 
           <h3 style={{ margin: '0 0 18px', fontFamily: "'Noto Sans', sans-serif", fontSize: '13px', fontWeight: 800, letterSpacing: '.12em' }}>PRODUCTS SUPPORTED</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '16px' }}>
-            {[...(project.detail.sections ?? [])].sort((a, b) => a.name.localeCompare(b.name)).map((product, index) => (
-              <section key={product.name} style={{ minHeight: '132px', position: 'relative', background: '#fff3a8', padding: '24px 16px 16px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', boxShadow: '2px 4px 10px rgba(35,24,12,.2)', transform: `rotate(${[-1, .7, -.4][index % 3]}deg)` }}>
-                <span aria-hidden="true" style={{ position: 'absolute', top: '8px', left: '50%', width: '8px', height: '8px', borderRadius: '50%', background: '#b43a27', transform: 'translateX(-50%)', boxShadow: '0 1px 2px rgba(0,0,0,.35)' }} />
-                <h4 style={{ margin: '0 0 8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '14px', fontWeight: 800, color: product.link ? '#1555b6' : '#000' }}>
+          <div style={{ display: 'grid', gap: '16px' }}>
+            {[...(project.detail.sections ?? [])].sort((a, b) => a.name.localeCompare(b.name)).map((product) => (
+              <section key={product.name} style={{ border: '1px solid #dfdfdf', borderTop: '4px solid #0d3880', padding: '22px 24px', background: '#fbfaf7', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
+                <h4 style={{ margin: '0 0 8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '17px', fontWeight: 800, color: product.link ? '#1555b6' : '#000' }}>
                   {product.link ? <a href={product.link} target="_blank" rel="noopener noreferrer" style={{ color: '#1555b6', textDecoration: 'none' }}>{product.name}</a> : product.name}
                 </h4>
-                <p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '12px', lineHeight: 1.55, color: '#000' }}>{product.tags}</p>
+                <p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.6, color: '#000' }}>{product.tags}</p>
               </section>
             ))}
           </div>
@@ -1587,7 +1589,7 @@ export default function App() {
             >
               <PushPin color="#cc2222" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={yamiImg} alt="Yami" style={{ width: '100%', height: 'auto', display: 'block', filter: hoveredAmbassador === 'yami' ? 'drop-shadow(0 16px 32px rgba(0,0,0,.42)) drop-shadow(0 5px 14px rgba(0,0,0,.26))' : 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))', transition: 'filter .25s ease' }} />
-              <div style={{ textAlign: 'center', marginTop: '8px', opacity: hoveredAmbassador === 'yami' ? 1 : 0, transition: 'opacity .2s ease', pointerEvents: 'none' }}><span style={{ fontFamily: "'Space Mono', monospace", fontSize: '7.5px', letterSpacing: '.1em', color: 'rgba(55,28,5,.85)', background: 'rgba(255,248,220,.94)', padding: '2px 10px', borderRadius: '2px', boxShadow: '0 1px 6px rgba(0,0,0,.16)', whiteSpace: 'nowrap' }}>CAMPUS AMBASSADOR</span></div>
+              <div style={{ textAlign: 'center', marginTop: '8px', opacity: hoveredAmbassador === 'yami' ? 1 : 0, transition: 'opacity .2s ease', pointerEvents: 'none' }}><span style={{ fontFamily: "'Space Mono', monospace", fontSize: '7.5px', letterSpacing: '.1em', color: 'rgba(55,28,5,.85)', background: 'rgba(255,248,220,.94)', padding: '2px 10px', borderRadius: '2px', boxShadow: '0 1px 6px rgba(0,0,0,.16)', whiteSpace: 'nowrap' }}>Campus Ambassador →</span></div>
             </div>
 
             {/* Notion sticker */}
@@ -1599,7 +1601,7 @@ export default function App() {
             >
               <PushPin color="#444" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={notionImg} alt="Notion" style={{ width: '100%', height: 'auto', display: 'block', filter: hoveredAmbassador === 'notion' ? 'drop-shadow(0 16px 32px rgba(0,0,0,.42)) drop-shadow(0 5px 14px rgba(0,0,0,.26))' : 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))', transition: 'filter .25s ease' }} />
-              <div style={{ textAlign: 'center', marginTop: '8px', opacity: hoveredAmbassador === 'notion' ? 1 : 0, transition: 'opacity .2s ease', pointerEvents: 'none' }}><span style={{ fontFamily: "'Space Mono', monospace", fontSize: '7.5px', letterSpacing: '.1em', color: 'rgba(55,28,5,.85)', background: 'rgba(255,248,220,.94)', padding: '2px 10px', borderRadius: '2px', boxShadow: '0 1px 6px rgba(0,0,0,.16)', whiteSpace: 'nowrap' }}>CAMPUS AMBASSADOR</span></div>
+              <div style={{ textAlign: 'center', marginTop: '8px', opacity: hoveredAmbassador === 'notion' ? 1 : 0, transition: 'opacity .2s ease', pointerEvents: 'none' }}><span style={{ fontFamily: "'Space Mono', monospace", fontSize: '7.5px', letterSpacing: '.1em', color: 'rgba(55,28,5,.85)', background: 'rgba(255,248,220,.94)', padding: '2px 10px', borderRadius: '2px', boxShadow: '0 1px 6px rgba(0,0,0,.16)', whiteSpace: 'nowrap' }}>Campus Ambassador →</span></div>
             </div>
 
             {/* Photo / bio card */}
