@@ -233,7 +233,7 @@ const PROJECTS: Project[] = [
   {
     id: 6, num: '06', title: 'Chinese Drama Society at Cornell', role: 'Visual Design / Creative Direction',
     category: 'VISUAL DESIGN', cardType: 'sticker',
-    rotation: 2.0, top: '70%', left: '1%',
+    rotation: 2.0, top: '76%', left: '64%',
     pinColor: '#8b1a1a', bg: '#ffffff', accent: '#7c2d12',
     stickerSrc: cdscImg, stickerSize: 145,
     detail: {
@@ -281,7 +281,7 @@ const PROJECTS: Project[] = [
   {
     id: 9, num: '09', title: 'INFO 4125', role: 'Project Management',
     category: 'COURSEWORK', cardType: 'index',
-    rotation: -1.8, top: '73%', left: '63%',
+    rotation: -1.8, top: '75%', left: '2%',
     pinColor: '#6b4226', bg: '#fdf5e6', accent: '#78350f',
     detail: {
       timeline: 'Fall 2024',
@@ -1090,10 +1090,10 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
 
           <h3 style={{ margin: '0 0 18px', fontFamily: "'Noto Sans', sans-serif", fontSize: '13px', fontWeight: 800, letterSpacing: '.12em' }}>PRODUCTS SUPPORTED</h3>
-          <div style={{ display: 'grid', gap: '16px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '14px' }}>
             {[...(project.detail.sections ?? [])].sort((a, b) => a.name.localeCompare(b.name)).map((product) => (
-              <section key={product.name} style={{ border: '1px solid #dfdfdf', borderTop: '4px solid #0d3880', padding: '22px 24px', background: '#fbfaf7', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
-                <h4 style={{ margin: '0 0 8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '17px', fontWeight: 800, color: product.link ? '#1555b6' : '#000' }}>
+              <section key={product.name} style={{ minHeight: '118px', border: '1px solid #dfdfdf', borderTop: '4px solid #0d3880', padding: '18px 16px', background: '#fbfaf7', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
+                <h4 style={{ margin: '0 0 8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '15px', lineHeight: 1.25, fontWeight: 800, color: product.link ? '#1555b6' : '#000' }}>
                   {product.link ? <a href={product.link} target="_blank" rel="noopener noreferrer" style={{ color: '#1555b6', textDecoration: 'none' }}>{product.name}</a> : product.name}
                 </h4>
                 <p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.6, color: '#000' }}>{product.tags}</p>
@@ -1733,7 +1733,7 @@ export default function App() {
               backTitle="Class of 2027"
               backSubtitle="Senior Year"
               backBg="#fff5f5" backAccent="#9c2020"
-              top="74%" left="16%" rotation={2.8} pinColor="#cc2200" width={230}
+              top="60%" left="13%" rotation={2.8} pinColor="#cc2200" width={230}
               aspectRatio={0.44}
             />
 
