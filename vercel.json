@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "https://susan-xu-portfolio-2026.zx323807494.chatgpt.site/$1"
+    }
+  ]
+}
