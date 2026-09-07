@@ -1108,6 +1108,66 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     )
   }
 
+  if (project.id === 3) {
+    const mediumProjects = [
+      {
+        name: 'CGCC', summary: 'Building a cohesive visual identity through collaborative brand exploration.',
+        role: 'Product Designer', timeline: 'Oct. – Dec. 2024', team: '4 Designers',
+        description: 'As part of a four-person design team, I collaborated on visual concepts, logos, presentation assets, and brand guidelines, translating client goals into a consistent visual identity.',
+        link: 'https://drive.google.com/file/d/1wxmL0tIL_UaOCHU0K5a4OBd3bRhbFxKR/view',
+      },
+      {
+        name: 'Muffinz NYC', summary: 'Creating a playful brand system for a growing NYC business.',
+        role: 'Product Designer, assistant PM', timeline: 'Jan. – Apr. 2025', team: '5 Designers',
+        description: "I collaborated with a five-person design team and served as an assistant PM, exploring brand direction, refining visual concepts, and creating cohesive assets that reflected the client's personality and audience.",
+        link: 'https://drive.google.com/file/d/1edqpidsIGY2QNJHLdwM5sv5SueFOE5fC/view?usp=sharing',
+      },
+      {
+        name: 'VAST Health', summary: 'Leading a six-person design team from client requirements to final creative direction.',
+        role: 'Product Manager', timeline: 'Oct. – Dec. 2025', team: '1 PM · 6 Designers',
+        description: 'As Product Manager, I coordinated the project roadmap, facilitated communication between the client and designers, and guided a six-person team through research, ideation, feedback, and final delivery.',
+        link: 'https://drive.google.com/file/d/1qP9T5C8Tqun1HlrU3TdP6OfUH9kPT0gt/view?usp=sharing',
+      },
+    ]
+
+    return (
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(800px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 58px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(-.12deg)' }}>
+          <PushPin color="#c2400a" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
+          <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
+
+          <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>Medium Design Collective</h2>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Designing and leading client projects from brand identity to digital experiences.</p>
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+          <p style={{ margin: 0, color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>Through Medium Design Collective, I worked across client projects as both a product designer and project manager, translating client needs into visual identities and digital experiences while collaborating with multidisciplinary design teams.</p>
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div style={{ display: 'grid', gap: '22px' }}>
+            {mediumProjects.map((item, index) => (
+              <section key={item.name} style={{ border: '1px solid #dfdfdf', borderTop: '4px solid #1a1a1a', padding: '26px 28px 28px', background: index % 2 === 0 ? '#fbfaf7' : '#fff', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px' }}>
+                  <div>
+                    <h3 style={{ margin: '0 0 7px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '27px', lineHeight: 1.1 }}>{item.name}</h3>
+                    <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.6 }}>{item.summary}</p>
+                  </div>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ flexShrink: 0, background: '#17120d', color: '#fff', textDecoration: 'none', padding: '8px 11px', fontFamily: "'Space Mono', monospace", fontSize: '8px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROJECT ↗</a>
+                </div>
+                <div style={{ height: '1px', background: '#ddd', margin: '22px 0' }} />
+                <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr', gap: '24px' }}>
+                  {[['ROLE', item.role], ['TIMELINE', item.timeline], ['TEAM', item.team]].map(([label, value]) => (
+                    <div key={label}><b style={{ display: 'block', marginBottom: '7px', fontFamily: "'Noto Sans', sans-serif", fontSize: '9px', fontWeight: 800, letterSpacing: '.12em' }}>{label}</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '12px', lineHeight: 1.6, color: '#222' }}>{value}</p></div>
+                  ))}
+                </div>
+                <div style={{ height: '1px', background: '#ddd', margin: '22px 0' }} />
+                <p style={{ margin: 0, color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.75 }}>{item.description}</p>
+              </section>
+            ))}
+          </div>
+        </article>
+      </div>
+    )
+  }
+
   return (
     <div
       onClick={onClose}
@@ -1448,8 +1508,8 @@ export default function App() {
               style={{ position: 'absolute', top: '23%', left: '29%', width: '80px', zIndex: hoveredAmbassador === 'yami' ? 20 : 2, transform: hoveredAmbassador === 'yami' ? 'rotate(.4deg) translateY(-10px) scale(1.04)' : 'rotate(4deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
             >
               <PushPin color="#cc2222" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
-              <img src={yamiImg} alt="Yami" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
-              <div style={{ marginTop: '7px', textAlign: 'center', whiteSpace: 'nowrap', fontFamily: "'Space Mono', monospace", fontSize: '8px', fontWeight: 700, letterSpacing: '.08em', color: '#17120d', opacity: hoveredAmbassador === 'yami' ? 1 : 0, transform: hoveredAmbassador === 'yami' ? 'translateY(0)' : 'translateY(-4px)', transition: 'opacity .18s ease, transform .18s ease', pointerEvents: 'none' }}>CAMPUS AMBASSADOR</div>
+              <img src={yamiImg} alt="Yami" style={{ width: '100%', height: 'auto', display: 'block', filter: hoveredAmbassador === 'yami' ? 'drop-shadow(0 16px 32px rgba(0,0,0,.42)) drop-shadow(0 5px 14px rgba(0,0,0,.26))' : 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))', transition: 'filter .25s ease' }} />
+              <div style={{ textAlign: 'center', marginTop: '8px', opacity: hoveredAmbassador === 'yami' ? 1 : 0, transition: 'opacity .2s ease', pointerEvents: 'none' }}><span style={{ fontFamily: "'Space Mono', monospace", fontSize: '7.5px', letterSpacing: '.1em', color: 'rgba(55,28,5,.85)', background: 'rgba(255,248,220,.94)', padding: '2px 10px', borderRadius: '2px', boxShadow: '0 1px 6px rgba(0,0,0,.16)', whiteSpace: 'nowrap' }}>CAMPUS AMBASSADOR</span></div>
             </div>
 
             {/* Notion sticker */}
@@ -1460,8 +1520,8 @@ export default function App() {
               style={{ position: 'absolute', top: '12%', left: '23%', width: '88px', zIndex: hoveredAmbassador === 'notion' ? 20 : 2, transform: hoveredAmbassador === 'notion' ? 'rotate(-.3deg) translateY(-10px) scale(1.04)' : 'rotate(-3deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
             >
               <PushPin color="#444" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
-              <img src={notionImg} alt="Notion" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
-              <div style={{ marginTop: '7px', textAlign: 'center', whiteSpace: 'nowrap', fontFamily: "'Space Mono', monospace", fontSize: '8px', fontWeight: 700, letterSpacing: '.08em', color: '#17120d', opacity: hoveredAmbassador === 'notion' ? 1 : 0, transform: hoveredAmbassador === 'notion' ? 'translateY(0)' : 'translateY(-4px)', transition: 'opacity .18s ease, transform .18s ease', pointerEvents: 'none' }}>CAMPUS AMBASSADOR</div>
+              <img src={notionImg} alt="Notion" style={{ width: '100%', height: 'auto', display: 'block', filter: hoveredAmbassador === 'notion' ? 'drop-shadow(0 16px 32px rgba(0,0,0,.42)) drop-shadow(0 5px 14px rgba(0,0,0,.26))' : 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))', transition: 'filter .25s ease' }} />
+              <div style={{ textAlign: 'center', marginTop: '8px', opacity: hoveredAmbassador === 'notion' ? 1 : 0, transition: 'opacity .2s ease', pointerEvents: 'none' }}><span style={{ fontFamily: "'Space Mono', monospace", fontSize: '7.5px', letterSpacing: '.1em', color: 'rgba(55,28,5,.85)', background: 'rgba(255,248,220,.94)', padding: '2px 10px', borderRadius: '2px', boxShadow: '0 1px 6px rgba(0,0,0,.16)', whiteSpace: 'nowrap' }}>CAMPUS AMBASSADOR</span></div>
             </div>
 
             {/* Photo / bio card */}
