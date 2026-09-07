@@ -1251,6 +1251,39 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     )
   }
 
+  if (project.id === 6) {
+    return (
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(820px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(-.1deg)' }}>
+          <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
+
+          <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>Chinese Drama Society at Cornell</h2>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Building the visual identity behind Cornell&apos;s Chinese-language theatre productions.</p>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.45fr .8fr .7fr 1fr', gap: '26px' }}>
+            {[
+              ['MY ROLE', 'Publicity Lead · Product Designer · Project Manager'],
+              ['TIMELINE', 'Jan. 2025 – Present'],
+              ['TEAM', '5 Designers'],
+              ['TOOLS', 'Figma · VS Code · Canva · Xiumi'],
+            ].map(([label, value]) => (
+              <div key={label}><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>{label}</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>{value}</p></div>
+            ))}
+          </div>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div style={{ display: 'grid', gap: '18px', color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>
+            <p style={{ margin: 0 }}>As Publicity Lead, I lead a team of five designers in shaping the visual identity of each production, from posters and playbills to merchandise and digital campaigns. Beyond production publicity, another designer and I designed the society’s website in Figma and built it in VS Code, creating a digital archive that brings together our past productions and creative work.</p>
+            <p style={{ margin: '8px 0 0', fontStyle: 'italic', color: '#555' }}>This project is currently under construction.</p>
+          </div>
+        </article>
+      </div>
+    )
+  }
+
   if (project.id === 7) {
     const heading = { fontFamily: "'Playfair Display', serif", fontSize: '29px', lineHeight: 1.15, color: '#111', margin: '44px 0 8px', fontWeight: 700 }
     const subheading = { fontFamily: "'Noto Sans', sans-serif", fontSize: '16px', lineHeight: 1.45, color: '#222', margin: '0 0 18px', fontWeight: 700 }
@@ -1310,15 +1343,14 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <p style={paragraph}>Before developing the interaction further, I looked at how Spotify already handles playlist management.</p>
           <p style={paragraph}>Spotify&apos;s existing playlist menu includes an &quot;Add to other playlist&quot; action, and its destination selector already provides search, sorting, and playlist browsing.</p>
           <p style={paragraph}>Instead of replacing these familiar interactions, I focused on improving what happens before them: allowing users to select multiple songs first and then perform an action on the entire selection.</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', margin: '24px 0 34px' }}><img src={info1998Imgs[2]} alt="Spotify existing playlist menu" style={{ ...imageStyle, margin: 0 }} /><img src={info1998Imgs[3]} alt="Spotify add to playlist screen" style={{ ...imageStyle, margin: 0 }} /></div>
+          <div style={{ width: '68%', margin: '24px auto 34px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}><img src={info1998Imgs[2]} alt="Spotify existing playlist menu" style={{ ...imageStyle, margin: 0 }} /><img src={info1998Imgs[3]} alt="Spotify add to playlist screen" style={{ ...imageStyle, margin: 0 }} /></div>
           <h4 style={subheading}>Design Opportunity</h4><p style={paragraph}>Keep Spotify&apos;s familiar destination-selection experience while introducing a faster way to select multiple songs.</p>
 
           <h3 style={heading}>Exploring the Interaction</h3><h4 style={subheading}>How could multi-select fit into Spotify&apos;s existing experience?</h4>
           <p style={paragraph}>My early sketches explored how users could enter selection mode, select multiple songs, and add or remove them without leaving their playlist.</p>
           <p style={paragraph}>Instead of focusing on visual polish, I used these sketches to think through the interaction itself.</p>
           <p style={paragraph}>I explored questions like:<br />How should users enter multi-select mode?<br />How should selected songs be distinguished?<br />Where should Add, Remove, and Cancel actions live?<br />How should Spotify communicate that an action is complete?</p>
-          <img src={info1998Imgs[4]} alt="Early interaction sketch" style={imageStyle} />
-          <img src={info1998Imgs[5]} alt="Early add and delete flow sketch" style={imageStyle} />
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', margin: '24px 0 34px', alignItems: 'start' }}><img src={info1998Imgs[4]} alt="Early interaction sketch" style={{ ...imageStyle, margin: 0 }} /><img src={info1998Imgs[5]} alt="Early add and delete flow sketch" style={{ ...imageStyle, margin: 0 }} /></div>
           <h4 style={subheading}>Early Direction</h4>
           <p style={paragraph}>The sketches helped establish the core interaction: users would intentionally enter a selection mode, choose multiple songs directly within their playlist, and then perform an action on the entire selection.</p>
           <p style={paragraph}>Keeping selection inside the existing playlist also meant users wouldn&apos;t have to leave their current context just to manage multiple songs.</p>
@@ -1326,7 +1358,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <h3 style={heading}>From Low-Fi to Mid-Fi</h3><h4 style={subheading}>Turning the idea into a complete interaction.</h4>
           <p style={paragraph}>Once the core interaction was established, I translated the sketches into a more structured mid-fidelity flow.</p>
           <p style={paragraph}>The experience became:</p><p style={{ ...paragraph, fontWeight: 700 }}>Playlist → Select Mode → Select Songs → Add to Playlist → Choose Destination</p>
-          <img src={info1998Imgs[6]} alt="Mid-fidelity multi-select flow" style={imageStyle} />
+          <div style={{ background: '#000', padding: '18px', margin: '24px 0 34px' }}><img src={info1998Imgs[6]} alt="Mid-fidelity multi-select flow" style={{ ...imageStyle, margin: 0, border: 0 }} /></div>
           {numbered('01 · A Clear Entry Point', 'A dedicated Select action gives users an intentional way to enter multi-select mode without changing how the normal playlist behaves.')}
           {numbered('02 · Visible Selection States', 'Selection controls appear beside each song once the mode is activated, helping users distinguish between selected and unselected tracks.')}
           {numbered('03 · One Action, Multiple Songs', 'Instead of completing the same action for every song, users can build their selection first and then add or remove multiple songs at once.')}
@@ -1334,7 +1366,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           <h3 style={heading}>From Mid-Fi to High-Fi</h3><h4 style={subheading}>Making the interaction feel native to Spotify.</h4>
           <p style={paragraph}>Moving into high fidelity wasn&apos;t simply about adding color. I refined the hierarchy, interaction states, and visual feedback so the feature would feel like a natural extension of Spotify rather than a separate experience.</p>
-          <img src={info1998Imgs[7]} alt="High-fidelity Spotify multi-select flow" style={imageStyle} />
+          <div style={{ background: '#000', padding: '18px', margin: '24px 0 34px' }}><img src={info1998Imgs[7]} alt="High-fidelity Spotify multi-select flow" style={{ ...imageStyle, margin: 0, border: 0 }} /></div>
           {numbered('01 · Stronger Selection Feedback', 'I introduced clearer selection indicators and Spotify green to distinguish active states, making it easier to understand which songs are currently selected.')}
           {numbered('02 · Clearer Action Hierarchy', "Add, Remove, and Cancel remain persistent at the bottom of the screen, keeping the user's available actions visible throughout selection.")}
           {numbered('03 · Spotify-Native Visual Language', "I incorporated Spotify's dark interface, green accents, playlist hierarchy, typography, and familiar UI patterns so users could focus on learning the new functionality rather than learning a new interface.")}
@@ -1346,7 +1378,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           <h3 style={heading}>Final Design</h3><h4 style={subheading}>Select more. Repeat less.</h4>
           <p style={paragraph}>The final experience allows users to enter selection mode, choose multiple songs, and manage their selection through one continuous flow.</p>
-          <img src={info1998Imgs[8]} alt="Final interactive Spotify prototype" style={imageStyle} />
+          <div style={{ background: '#000', padding: '18px', margin: '24px 0 34px' }}><img src={info1998Imgs[8]} alt="Final interactive Spotify prototype" style={{ ...imageStyle, margin: 0, border: 0 }} /></div>
           {numbered('Enter Select Mode', 'Users begin from the playlist they already know and activate multi-select through a dedicated Select action.')}
           {numbered('Build a Selection', 'Selection controls appear within the existing song list, allowing users to choose multiple tracks while remaining inside their playlist.')}
           {numbered('Add or Remove at Once', 'Persistent actions let users apply Add or Remove to their selection instead of repeating the action song by song.')}
