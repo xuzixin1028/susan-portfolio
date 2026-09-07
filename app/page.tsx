@@ -142,7 +142,7 @@ const PROJECTS: Project[] = [
   {
     id: 2, num: '02', title: 'Altheros Capital', role: 'UI/UX Design Administrative Lead',
     category: 'UX DESIGN', cardType: 'sticker',
-    rotation: 4.0, top: '49%', left: '34%',
+    rotation: 4.0, top: '49%', left: '30%',
     pinColor: '#0d3880', bg: '#ffffff', accent: '#1a1a1a',
     stickerSrc: acImg, stickerSize: 115,
     detail: {
@@ -214,9 +214,9 @@ const PROJECTS: Project[] = [
   {
     id: 5, num: '05', title: 'Develop For Good', role: 'Product Design / Technology',
     category: 'PRODUCT DESIGN', cardType: 'sticker',
-    rotation: -3.2, top: '8%', left: '67%',
+    rotation: -3.2, top: '5%', left: '64%',
     pinColor: '#cc2200', bg: '#0d1b4e', accent: '#e91e8c',
-    stickerSrc: dfgImg, stickerSize: 132,
+    stickerSrc: dfgImg, stickerSize: 150,
     detail: {
       timeline: 'Spring 2023',
       overview: "Designed and built technology solutions for a nonprofit partner through Develop for Good's national volunteer program connecting students with social impact organizations.",
@@ -788,11 +788,11 @@ function CameraCard({ onOpen }: { onOpen: () => void }) {
     <div
       style={{
         position: 'absolute',
-        top: '60%',
-        left: '24%',
+        top: '53%',
+        left: '21%',
         width: '134px',
         cursor: 'pointer',
-        zIndex: hovered ? 20 : 2,
+        zIndex: hovered ? 20 : 4,
         transform: `rotate(${hovered ? 0.4 : 2.8}deg) translateY(${hovered ? -8 : 0}px)`,
         transition: 'all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
