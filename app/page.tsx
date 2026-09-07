@@ -1393,27 +1393,51 @@ export default function App() {
           <div style={{ height: '1px', background: 'rgba(0,0,0,0.1)', marginBottom: '13px' }} />
 
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '7px', letterSpacing: '0.16em', color: '#b0b0b0', marginBottom: '9px' }}>
-            TABLE OF CONTENTS
+            WORK EXPERIENCE
           </div>
 
           <div style={{ flex: 1, overflow: 'hidden' }}>
-            {[...PROJECTS, YAMI_PROJECT, NOTION_PROJECT].map((p) => (
+            {[...PROJECTS.filter((p) => p.id <= 6), YAMI_PROJECT, NOTION_PROJECT].map((p) => (
               <div
                 key={p.id}
                 onClick={() => setActiveProject(p)}
                 onMouseEnter={() => setHighlightedId(p.id)}
                 onMouseLeave={() => setHighlightedId(null)}
-                style={{ display: 'flex', gap: '8px', alignItems: 'baseline', padding: '4px 0', cursor: 'pointer', opacity: highlightedId === null || highlightedId === p.id ? 1 : 0.35, transition: 'opacity 0.15s ease', borderBottom: '1px solid rgba(0,0,0,0.055)' }}
+                style={{ display: 'flex', gap: '8px', alignItems: 'baseline', padding: '3px 0', cursor: 'pointer', opacity: highlightedId === null || highlightedId === p.id ? 1 : 0.35, transition: 'opacity 0.15s ease', borderBottom: '1px solid rgba(0,0,0,0.055)' }}
               >
                 <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: '#c0c0c0', flexShrink: 0, width: '20px' }}>
                   {p.num}
                 </span>
-                <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: '10.5px', color: highlightedId === p.id ? '#1a1a1a' : '#555', fontWeight: highlightedId === p.id ? 700 : 500, lineHeight: 1.38 }}>
+                <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: '10px', color: highlightedId === p.id ? '#1a1a1a' : '#555', fontWeight: highlightedId === p.id ? 700 : 500, lineHeight: 1.3 }}>
                   {tocTitle(p)}
                 </span>
               </div>
             ))}
 
+            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '7px', letterSpacing: '0.16em', color: '#b0b0b0', margin: '11px 0 5px' }}>
+              OTHERS
+            </div>
+
+            {PROJECTS.filter((p) => p.id >= 7).map((p) => (
+              <div key={p.id} onClick={() => setActiveProject(p)} onMouseEnter={() => setHighlightedId(p.id)} onMouseLeave={() => setHighlightedId(null)} style={{ display: 'flex', gap: '8px', alignItems: 'baseline', padding: '3px 0', cursor: 'pointer', opacity: highlightedId === null || highlightedId === p.id ? 1 : .35, transition: 'opacity .15s ease' }}>
+                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: '#c0c0c0', flexShrink: 0, width: '20px' }}>{p.num}</span>
+                <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: '10px', color: highlightedId === p.id ? '#1a1a1a' : '#555', fontWeight: highlightedId === p.id ? 700 : 500, lineHeight: 1.3 }}>{tocTitle(p)}</span>
+              </div>
+            ))}
+
+            {[
+              { label: 'My Photo · About Me', action: () => setShowBio(true) },
+              { label: 'Fujifilm Camera · Film', action: () => setShowFilm(true) },
+              { label: 'Suitcase · Travel & Friends', action: () => setShowTravel(true) },
+              { label: "Map · Places I've Been", action: () => setShowMap(true) },
+              { label: 'Cornell Flag' },
+              { label: 'Edinburgh Flag' },
+            ].map((item) => (
+              <div key={item.label} onClick={item.action} style={{ display: 'flex', gap: '8px', alignItems: 'baseline', padding: '2px 0', cursor: item.action ? 'pointer' : 'default' }}>
+                <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', color: '#c0c0c0', flexShrink: 0, width: '20px' }}>·</span>
+                <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: '9.5px', color: '#555', fontWeight: 500, lineHeight: 1.25 }}>{item.label}</span>
+              </div>
+            ))}
           </div>
 
           <div style={{ height: '1px', background: 'rgba(0,0,0,0.1)', margin: '14px 0 12px' }} />
