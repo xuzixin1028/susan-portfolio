@@ -263,7 +263,7 @@ const PROJECTS: Project[] = [
   {
     id: 8, num: '08', title: 'INFO 3450', role: 'Human Computer Interaction',
     category: 'COURSEWORK', cardType: 'index',
-    rotation: 1.5, top: '64%', left: '37%',
+    rotation: 1.5, top: '60%', left: '37%',
     pinColor: '#1e40af', bg: '#f0f4ff', accent: '#1e3a8a',
     detail: {
       timeline: 'Spring 2024',
@@ -1700,7 +1700,7 @@ export default function App() {
           <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '42px', fontWeight: 700, color: '#1a1a1a', lineHeight: .95, marginBottom: '10px', letterSpacing: '-0.035em' }}>
             SUSAN XU
           </div>
-          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '8px', letterSpacing: '-0.035em', color: '#444', lineHeight: 1.4, marginBottom: '5px', whiteSpace: 'nowrap' }}>
+          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '8.75px', letterSpacing: '-0.055em', color: '#444', lineHeight: 1.4, marginBottom: '5px', whiteSpace: 'nowrap' }}>
             Information Science, Systems, and Technology @ Cornell Engineering
           </div>
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '8.5px', letterSpacing: '0.1em', color: '#a0a0a0', marginBottom: '16px' }}>
