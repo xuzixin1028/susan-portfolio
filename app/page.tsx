@@ -1143,8 +1143,8 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
 
           <div style={{ display: 'grid', gap: '22px' }}>
-            {mediumProjects.map((item, index) => (
-              <section key={item.name} style={{ border: '1px solid #dfdfdf', borderTop: '4px solid #1a1a1a', padding: '26px 28px 28px', background: index % 2 === 0 ? '#fbfaf7' : '#fff', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
+            {mediumProjects.map((item) => (
+              <section key={item.name} style={{ border: '1px solid #dfdfdf', borderTop: '4px solid #1a1a1a', padding: '26px 28px 28px', background: '#fbfaf7', boxShadow: '0 5px 16px rgba(0,0,0,.07)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px' }}>
                   <div>
                     <h3 style={{ margin: '0 0 7px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '27px', lineHeight: 1.1 }}>{item.name}</h3>
@@ -1162,6 +1162,36 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                 <p style={{ margin: 0, color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.75 }}>{item.description}</p>
               </section>
             ))}
+          </div>
+        </article>
+      </div>
+    )
+  }
+
+  if (project.id === 4) {
+    return (
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(780px, 94vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: 'rotate(.12deg)' }}>
+          <PushPin color="#1a5c1a" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
+          <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
+
+          <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>New York State Bridge Authority</h2>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Improving internal operations and employee experiences within government.</p>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr', gap: '40px' }}>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>MY ROLE</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>Project Management · Operations · Process Improvement · Visual Design</p></div>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>TIMELINE</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>Summer 2025</p></div>
+          </div>
+
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <div style={{ display: 'grid', gap: '18px', color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>
+            <p style={{ margin: 0 }}>During my internship with the New York State Bridge Authority, I worked across project management, operations, HR, and IT to improve internal processes and employee experiences.</p>
+            <p style={{ margin: 0 }}>I partnered with the CIO and IT team to redesign the new-hire onboarding video system, supported the onboarding of 10+ employees, and organized 200+ onboarding packets to streamline administrative workflows.</p>
+            <p style={{ margin: 0 }}>I also designed internal communications and HR materials in Canva, bringing greater consistency and clarity to employee-facing resources.</p>
+            <p style={{ margin: '8px 0 0', fontStyle: 'italic', color: '#555' }}>Note: Due to the nature of my work with a New York State government authority, internal projects, systems, and materials are confidential and cannot be displayed publicly.</p>
           </div>
         </article>
       </div>
