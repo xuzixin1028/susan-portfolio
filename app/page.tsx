@@ -13,6 +13,7 @@ const suitcaseImg = asset('ChatGPT_Image_Sep_2__2026__06_42_06_PM-removebg-previ
 const info1998_lofi1 = asset('Screenshot_2026-09-03_at_11.59.03_PM.png'), info1998_lofi2 = asset('Screenshot_2026-09-03_at_11.59.09_PM.png')
 const info1998_midfi = asset('Mid_Fi.png'), info1998_hifi = asset('Hi_Fi.png'), info1998_proto = asset('prototype.png')
 const info1998_real1 = asset('IMG_4209.PNG'), info1998_real2 = asset('IMG_4210.PNG')
+const info1998Imgs = Array.from({ length: 9 }, (_, i) => asset(`info1998-img-${i + 1}.${i === 2 || i === 3 ? 'PNG' : 'png'}`))
 const yamiImg = asset('ChatGPT_Image_Sep_2__2026__06_27_54_PM.png'), notionImg = asset('ChatGPT_Image_Sep_2__2026__06_30_06_PM.png')
 const travelPhoto1 = asset('DSC01513.JPG'), travelPhoto2 = asset('DSC09778.JPG'), travelPhoto3 = asset('IMG_2153.JPG'), travelPhoto4 = asset('Screenshot_2026-09-02_at_6.43.01_PM.png')
 
@@ -1245,6 +1246,125 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               </section>
             ))}
           </div>
+        </article>
+      </div>
+    )
+  }
+
+  if (project.id === 7) {
+    const heading = { fontFamily: "'Playfair Display', serif", fontSize: '29px', lineHeight: 1.15, color: '#111', margin: '44px 0 8px', fontWeight: 700 }
+    const subheading = { fontFamily: "'Noto Sans', sans-serif", fontSize: '16px', lineHeight: 1.45, color: '#222', margin: '0 0 18px', fontWeight: 700 }
+    const paragraph = { fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.8, color: '#292929', margin: '0 0 16px' }
+    const imageStyle = { width: '100%', height: 'auto', display: 'block', margin: '24px 0 34px', border: '1px solid #e2e2e2' }
+    const numbered = (title: string, copy: string) => (
+      <div style={{ background: '#fbfaf7', borderLeft: '3px solid #1db954', padding: '15px 18px', marginBottom: '12px' }}>
+        <b style={{ display: 'block', fontFamily: "'Noto Sans', sans-serif", fontSize: '12px', color: '#111', marginBottom: '5px' }}>{title}</b>
+        <p style={{ ...paragraph, margin: 0 }}>{copy}</p>
+      </div>
+    )
+
+    return (
+      <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(24,20,16,.78)', backdropFilter: 'blur(3px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(900px, 95vw)', maxHeight: '90vh', overflowY: 'auto', position: 'relative', padding: '72px 64px 64px', boxShadow: '0 24px 80px rgba(0,0,0,.42)' }}>
+          <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px' }}>BACK TO BOARD ×</button>
+
+          <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.14em', color: '#1db954', marginBottom: '10px' }}>INFO 1998 · INTRO TO DIGITAL PRODUCT DESIGN</div>
+          <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '43px', lineHeight: 1, fontWeight: 700 }}>A Spotify feature concept</h2>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>A Spotify feature concept that makes adding and managing multiple songs more efficient while staying familiar to existing users.</p>
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '36px' }}>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>MY ROLE</b><p style={{ ...paragraph, margin: 0 }}>Product Designer · Individual Case Study</p></div>
+            <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>TIMELINE</b><p style={{ ...paragraph, margin: 0 }}>Feb. – May 2024</p></div>
+          </div>
+          <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
+
+          <h3 style={heading}>The Challenge</h3><h4 style={subheading}>Adding one song at a time shouldn&apos;t be this tedious.</h4>
+          <p style={paragraph}>Spotify makes discovering music easy, but building and managing playlists can become repetitive when users want to work with several songs at once.</p>
+          <p style={paragraph}>Through my initial research, I identified two recurring pain points:</p>
+          {numbered('01 · Adding multiple songs takes too many repeated actions', 'Users have to repeat the same process for each song they want to move or add to another playlist.')}
+          {numbered('02 · Large playlists become difficult to manage', 'As playlists grow, selecting and organizing individual songs becomes increasingly cumbersome.')}
+          <p style={paragraph}>This led me to ask:</p>
+          <blockquote style={{ margin: '22px 0 36px', padding: '20px 24px', background: '#191414', color: '#fff', fontFamily: "'Playfair Display', serif", fontSize: '21px', lineHeight: 1.55 }}>How might I make adding and managing multiple songs in a Spotify playlist faster without disrupting an experience users already understand?</blockquote>
+
+          <h3 style={heading}>User Research</h3><h4 style={subheading}>Understanding how people actually build playlists.</h4>
+          <p style={paragraph}>Rather than immediately jumping into a solution, I wanted to understand how people currently discover music, build playlists, and organize their songs on Spotify.</p>
+          <p style={paragraph}>I conducted 6 user interviews across two rounds.</p>
+          <p style={paragraph}><b>Round 1 · Discover</b><br />I interviewed three Spotify users about their listening habits, playlist-building behaviors, and frustrations with the existing experience.</p>
+          <p style={paragraph}><b>Round 2 · Dig Deeper</b><br />After reviewing the first round of interviews, I interviewed three additional users to investigate recurring patterns and better understand the problems that surfaced.</p>
+          <img src={info1998Imgs[0]} alt="User research affinity notes" style={imageStyle} />
+
+          <h3 style={heading}>Synthesis</h3><h4 style={subheading}>One frustration kept showing up.</h4>
+          <p style={paragraph}>I organized my research through affinity mapping, grouping observations into three areas:</p>
+          <p style={{ ...paragraph, fontWeight: 700 }}>Discovering Music · Organizing Playlists · Music Features</p>
+          <p style={paragraph}>Across different listening habits, one frustration repeatedly emerged:</p>
+          <p style={{ ...paragraph, fontWeight: 700 }}>Users wanted a faster way to select and manage several songs at once.</p>
+          <p style={paragraph}>The problem wasn&apos;t necessarily finding music. The friction appeared once users already knew which songs they wanted and needed to organize them.</p>
+          <img src={info1998Imgs[1]} alt="Research synthesis affinity map" style={imageStyle} />
+
+          <h3 style={heading}>The Opportunity</h3>
+          <p style={paragraph}>Rather than redesigning playlist management entirely, I focused on one high-frequency interaction:</p>
+          <p style={{ ...paragraph, fontWeight: 700 }}>Multi-selecting songs before adding or removing them from playlists.</p>
+          <p style={paragraph}>This gave me a focused opportunity to reduce repetitive actions without asking users to completely relearn Spotify.</p>
+
+          <h3 style={heading}>Learning From Spotify&apos;s Existing Patterns</h3><h4 style={subheading}>Building on what users already know.</h4>
+          <p style={paragraph}>Before developing the interaction further, I looked at how Spotify already handles playlist management.</p>
+          <p style={paragraph}>Spotify&apos;s existing playlist menu includes an &quot;Add to other playlist&quot; action, and its destination selector already provides search, sorting, and playlist browsing.</p>
+          <p style={paragraph}>Instead of replacing these familiar interactions, I focused on improving what happens before them: allowing users to select multiple songs first and then perform an action on the entire selection.</p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', margin: '24px 0 34px' }}><img src={info1998Imgs[2]} alt="Spotify existing playlist menu" style={{ ...imageStyle, margin: 0 }} /><img src={info1998Imgs[3]} alt="Spotify add to playlist screen" style={{ ...imageStyle, margin: 0 }} /></div>
+          <h4 style={subheading}>Design Opportunity</h4><p style={paragraph}>Keep Spotify&apos;s familiar destination-selection experience while introducing a faster way to select multiple songs.</p>
+
+          <h3 style={heading}>Exploring the Interaction</h3><h4 style={subheading}>How could multi-select fit into Spotify&apos;s existing experience?</h4>
+          <p style={paragraph}>My early sketches explored how users could enter selection mode, select multiple songs, and add or remove them without leaving their playlist.</p>
+          <p style={paragraph}>Instead of focusing on visual polish, I used these sketches to think through the interaction itself.</p>
+          <p style={paragraph}>I explored questions like:<br />How should users enter multi-select mode?<br />How should selected songs be distinguished?<br />Where should Add, Remove, and Cancel actions live?<br />How should Spotify communicate that an action is complete?</p>
+          <img src={info1998Imgs[4]} alt="Early interaction sketch" style={imageStyle} />
+          <img src={info1998Imgs[5]} alt="Early add and delete flow sketch" style={imageStyle} />
+          <h4 style={subheading}>Early Direction</h4>
+          <p style={paragraph}>The sketches helped establish the core interaction: users would intentionally enter a selection mode, choose multiple songs directly within their playlist, and then perform an action on the entire selection.</p>
+          <p style={paragraph}>Keeping selection inside the existing playlist also meant users wouldn&apos;t have to leave their current context just to manage multiple songs.</p>
+
+          <h3 style={heading}>From Low-Fi to Mid-Fi</h3><h4 style={subheading}>Turning the idea into a complete interaction.</h4>
+          <p style={paragraph}>Once the core interaction was established, I translated the sketches into a more structured mid-fidelity flow.</p>
+          <p style={paragraph}>The experience became:</p><p style={{ ...paragraph, fontWeight: 700 }}>Playlist → Select Mode → Select Songs → Add to Playlist → Choose Destination</p>
+          <img src={info1998Imgs[6]} alt="Mid-fidelity multi-select flow" style={imageStyle} />
+          {numbered('01 · A Clear Entry Point', 'A dedicated Select action gives users an intentional way to enter multi-select mode without changing how the normal playlist behaves.')}
+          {numbered('02 · Visible Selection States', 'Selection controls appear beside each song once the mode is activated, helping users distinguish between selected and unselected tracks.')}
+          {numbered('03 · One Action, Multiple Songs', 'Instead of completing the same action for every song, users can build their selection first and then add or remove multiple songs at once.')}
+          {numbered('04 · Persistent Action Controls', 'Remove, Add, and Cancel remain accessible throughout selection mode, allowing users to take action without leaving the playlist.')}
+
+          <h3 style={heading}>From Mid-Fi to High-Fi</h3><h4 style={subheading}>Making the interaction feel native to Spotify.</h4>
+          <p style={paragraph}>Moving into high fidelity wasn&apos;t simply about adding color. I refined the hierarchy, interaction states, and visual feedback so the feature would feel like a natural extension of Spotify rather than a separate experience.</p>
+          <img src={info1998Imgs[7]} alt="High-fidelity Spotify multi-select flow" style={imageStyle} />
+          {numbered('01 · Stronger Selection Feedback', 'I introduced clearer selection indicators and Spotify green to distinguish active states, making it easier to understand which songs are currently selected.')}
+          {numbered('02 · Clearer Action Hierarchy', "Add, Remove, and Cancel remain persistent at the bottom of the screen, keeping the user's available actions visible throughout selection.")}
+          {numbered('03 · Spotify-Native Visual Language', "I incorporated Spotify's dark interface, green accents, playlist hierarchy, typography, and familiar UI patterns so users could focus on learning the new functionality rather than learning a new interface.")}
+
+          <h3 style={heading}>Key Design Decisions</h3>
+          {numbered('01 · Select Without Losing Context', 'Instead of sending users to a separate selection screen, multi-select happens directly inside the playlist. Users can continue browsing their songs, modify their selections, and see the playlist around them throughout the entire interaction. Why? Moving users into an entirely separate screen would introduce unnecessary navigation. Keeping selection in context makes the new feature feel like a mode of the existing playlist rather than a separate tool.')}
+          {numbered('02 · Multiple Songs, One Action', 'The central goal of the redesign was reducing repeated actions. Previously, managing several songs could require users to perform the same process over and over: Select Song → Add → Choose Playlist → Return → Repeat. The redesigned interaction changes that to: Enter Select Mode → Select Multiple Songs → Add Once → Choose Destination. This lets users finish the same task through one continuous flow.')}
+          {numbered('03 · Familiar Patterns for New Functionality', "I didn't want multi-select to require users to learn an entirely new playlist system. Instead, I introduced the new interaction where it was needed while preserving familiar Spotify patterns for playlist browsing and destination selection. This balance between new functionality and existing behavior helped the feature feel more integrated into the product.")}
+
+          <h3 style={heading}>Final Design</h3><h4 style={subheading}>Select more. Repeat less.</h4>
+          <p style={paragraph}>The final experience allows users to enter selection mode, choose multiple songs, and manage their selection through one continuous flow.</p>
+          <img src={info1998Imgs[8]} alt="Final interactive Spotify prototype" style={imageStyle} />
+          {numbered('Enter Select Mode', 'Users begin from the playlist they already know and activate multi-select through a dedicated Select action.')}
+          {numbered('Build a Selection', 'Selection controls appear within the existing song list, allowing users to choose multiple tracks while remaining inside their playlist.')}
+          {numbered('Add or Remove at Once', 'Persistent actions let users apply Add or Remove to their selection instead of repeating the action song by song.')}
+          {numbered('Choose a Destination', "When adding songs, users continue into Spotify's familiar playlist-selection experience to choose where the selected tracks should go.")}
+
+          <h3 style={heading}>Evaluating the Experience</h3><h4 style={subheading}>Did the interaction solve the original problem?</h4>
+          <p style={paragraph}>The final prototype gave me a way to evaluate whether the new interaction was understandable and whether multi-select could fit naturally within Spotify&apos;s existing playlist experience.</p>
+          <p style={paragraph}>The resulting flow addressed the core problem identified during research by allowing users to build a selection first and act on multiple songs at once, reducing the need for repeated playlist-management actions.</p>
+          <p style={paragraph}>The process also reinforced an important design principle for me:</p>
+          <p style={{ ...paragraph, fontWeight: 700 }}>New functionality should be distinct enough to discover, but familiar enough to feel like part of the product users already know.</p>
+
+          <h3 style={heading}>Reflection</h3><h4 style={subheading}>My first step into product design.</h4>
+          <p style={paragraph}>This was my first end-to-end UX project and my first time designing extensively in Figma.</p>
+          <p style={paragraph}>I initially approached the project by asking:</p><p style={{ ...paragraph, fontWeight: 700 }}>What could I add to Spotify?</p>
+          <p style={paragraph}>Through research, synthesis, iteration, and prototyping, my thinking shifted toward a much more important question:</p><p style={{ ...paragraph, fontWeight: 700 }}>What problem actually needs to be solved, and what is the smallest change that could meaningfully improve the experience?</p>
+          <p style={paragraph}>That shift became one of my biggest takeaways from the project.</p>
+          <p style={paragraph}>I also learned that high-fidelity design isn&apos;t simply about making screens look polished. Decisions around hierarchy, interaction states, feedback, and iconography all influence whether users understand what they can do.</p>
+          <p style={paragraph}>If I continued this project, I would conduct a larger round of usability testing, compare task completion time against Spotify&apos;s existing flow, and explore accessibility and edge cases for multi-select interactions.</p>
         </article>
       </div>
     )
