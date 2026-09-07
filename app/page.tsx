@@ -674,10 +674,10 @@ function Sprockets() {
 }
 
 const TRAVEL_PHOTOS = [
-  { src: travelPhoto1, caption: 'Adventures' },
-  { src: travelPhoto2, caption: 'On the Road' },
-  { src: travelPhoto3, caption: 'Friends' },
-  { src: travelPhoto4, caption: 'Memories' },
+  { src: travelPhoto1, caption: 'Puerto Rico' },
+  { src: travelPhoto2, caption: 'Iceland' },
+  { src: travelPhoto3, caption: 'Yosemite' },
+  { src: travelPhoto4, caption: 'Mount Tamalpais' },
 ]
 
 function SuitcaseCard({ onOpen }: { onOpen: () => void }) {
@@ -767,12 +767,22 @@ function TravelModal({ onClose }: { onClose: () => void }) {
         {/* Photo grid — portrait */}
         <div style={{ padding: '0 48px 48px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
           {TRAVEL_PHOTOS.map((photo, i) => (
-            <div key={i} style={{ borderRadius: '2px', overflow: 'hidden', aspectRatio: '3/4' }}>
+            <div key={i} style={{ position: 'relative', borderRadius: '2px', overflow: 'hidden', aspectRatio: '3/4' }}>
               <img
                 src={photo.src}
-                alt=""
+                alt={photo.caption}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
+              <div style={{
+                position: 'absolute', right: '12px', bottom: '12px',
+                padding: '6px 9px', borderRadius: '2px',
+                background: 'rgba(18, 13, 8, 0.72)', color: '#fffdf8',
+                fontFamily: "'Space Mono', monospace", fontSize: '10px',
+                fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.22)',
+              }}>
+                {photo.caption}
+              </div>
             </div>
           ))}
         </div>
