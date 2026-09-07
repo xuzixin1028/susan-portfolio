@@ -451,7 +451,7 @@ function PhotoCard({ onOpen }: { onOpen: () => void }) {
     <div
       style={{
         position: 'absolute',
-        top: '23%',
+        top: '28%',
         left: '64%',
         width: '252px',
         height: '358px',
@@ -1432,8 +1432,8 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           </div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: '34px' }}>
-            <a href="https://drive.google.com/file/d/1gECj31k4ez8fCcnRmxXayhcBmzQQ84PZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ background: '#1e3a8a', color: '#fff', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROJECT ↗</a>
-            <a href="https://www.figma.com/proto/90YuYZiRLxPAye4jqaXNwc/INFO-3450-Figma-Design--Copy-?node-id=87-122&starting-point-node-id=5%3A2&t=Z0CHe4ajHPgqP8Do-1" target="_blank" rel="noopener noreferrer" style={{ background: '#17120d', color: '#fff', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROTOTYPE ↗</a>
+            <a href="https://drive.google.com/file/d/1gECj31k4ez8fCcnRmxXayhcBmzQQ84PZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ background: '#f0f4ff', color: '#1e3a8a', border: '1px solid #cbd7f2', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROJECT ↗</a>
+            <a href="https://www.figma.com/proto/90YuYZiRLxPAye4jqaXNwc/INFO-3450-Figma-Design--Copy-?node-id=87-122&starting-point-node-id=5%3A2&t=Z0CHe4ajHPgqP8Do-1" target="_blank" rel="noopener noreferrer" style={{ background: '#f0f4ff', color: '#1e3a8a', border: '1px solid #cbd7f2', textDecoration: 'none', padding: '10px 14px', fontFamily: "'Space Mono', monospace", fontSize: '9px', fontWeight: 700, letterSpacing: '.1em' }}>VIEW PROTOTYPE ↗</a>
           </div>
         </article>
       </div>
@@ -1674,7 +1674,7 @@ export default function App() {
         <div style={{ width: '100%', height: isMobile ? 'auto' : '100%', background: '#fef9d2', position: 'relative', boxShadow: '5px 7px 24px rgba(0,0,0,0.22), 2px 3px 9px rgba(0,0,0,0.12)', transform: 'rotate(-0.5deg)', padding: '36px 24px 26px', display: 'flex', flexDirection: 'column' }}>
           <PushPin color="#0d3880" style={{ top: '-14px', left: '50%', transform: 'translateX(-50%)' }} />
 
-          <div style={{ fontFamily: "'Valley Sans', 'Arial Narrow', sans-serif", fontSize: '36px', fontWeight: 700, color: '#1a1a1a', lineHeight: 1, marginBottom: '7px', letterSpacing: '-0.025em' }}>
+          <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '42px', fontWeight: 700, color: '#1a1a1a', lineHeight: .95, marginBottom: '10px', letterSpacing: '-0.035em' }}>
             SUSAN XU
           </div>
           <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '11px', color: '#444', lineHeight: 1.5, marginBottom: '1px' }}>
@@ -1811,7 +1811,7 @@ export default function App() {
               onClick={() => setActiveProject(YAMI_PROJECT)}
               onMouseEnter={() => setHoveredAmbassador('yami')}
               onMouseLeave={() => setHoveredAmbassador(null)}
-              style={{ position: 'absolute', top: '23%', left: '29%', width: '80px', zIndex: hoveredAmbassador === 'yami' ? 20 : 2, transform: hoveredAmbassador === 'yami' ? 'rotate(.4deg) translateY(-10px) scale(1.04)' : 'rotate(4deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
+              style={{ position: 'absolute', top: '77%', left: '27%', width: '80px', zIndex: hoveredAmbassador === 'yami' ? 20 : 2, transform: hoveredAmbassador === 'yami' ? 'rotate(.4deg) translateY(-10px) scale(1.04)' : 'rotate(4deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
             >
               <PushPin color="#cc2222" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={yamiImg} alt="Yami" style={{ width: '100%', height: 'auto', display: 'block', filter: hoveredAmbassador === 'yami' ? 'drop-shadow(0 16px 32px rgba(0,0,0,.42)) drop-shadow(0 5px 14px rgba(0,0,0,.26))' : 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))', transition: 'filter .25s ease' }} />
@@ -1823,7 +1823,7 @@ export default function App() {
               onClick={() => setActiveProject(NOTION_PROJECT)}
               onMouseEnter={() => setHoveredAmbassador('notion')}
               onMouseLeave={() => setHoveredAmbassador(null)}
-              style={{ position: 'absolute', top: '12%', left: '23%', width: '88px', zIndex: hoveredAmbassador === 'notion' ? 20 : 2, transform: hoveredAmbassador === 'notion' ? 'rotate(-.3deg) translateY(-10px) scale(1.04)' : 'rotate(-3deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
+              style={{ position: 'absolute', top: '17%', left: '27%', width: '88px', zIndex: hoveredAmbassador === 'notion' ? 20 : 2, transform: hoveredAmbassador === 'notion' ? 'rotate(-.3deg) translateY(-10px) scale(1.04)' : 'rotate(-3deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
             >
               <PushPin color="#444" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={notionImg} alt="Notion" style={{ width: '100%', height: 'auto', display: 'block', filter: hoveredAmbassador === 'notion' ? 'drop-shadow(0 16px 32px rgba(0,0,0,.42)) drop-shadow(0 5px 14px rgba(0,0,0,.26))' : 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))', transition: 'filter .25s ease' }} />
