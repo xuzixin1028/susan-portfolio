@@ -453,7 +453,7 @@ function PhotoCard({ onOpen }: { onOpen: () => void }) {
       style={{
         position: 'absolute',
         top: '28%',
-        left: '64%',
+        left: '68%',
         width: '252px',
         height: '358px',
         cursor: 'pointer',
