@@ -16,6 +16,7 @@ const info1998_real1 = asset('IMG_4209.PNG'), info1998_real2 = asset('IMG_4210.P
 const info1998Imgs = Array.from({ length: 9 }, (_, i) => asset(`info1998-img-${i + 1}.${i === 2 || i === 3 ? 'PNG' : 'png'}`))
 const yamiImg = asset('ChatGPT_Image_Sep_2__2026__06_27_54_PM.png'), notionImg = asset('ChatGPT_Image_Sep_2__2026__06_30_06_PM.png')
 const travelPhoto1 = asset('DSC01513.JPG'), travelPhoto2 = asset('DSC09778.JPG'), travelPhoto3 = asset('IMG_2153.JPG'), travelPhoto4 = asset('Screenshot_2026-09-02_at_6.43.01_PM.png')
+const pigeonImg = asset('pigeon-removebg-preview.png')
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -945,6 +946,54 @@ function MapCard({ onOpen }: { onOpen: () => void }) {
   )
 }
 
+function PigeonSticker() {
+  const [hovered, setHovered] = useState(false)
+
+  const playCoo = () => {
+    const context = new AudioContext()
+    const now = context.currentTime
+    const master = context.createGain()
+    master.gain.setValueAtTime(0.0001, now)
+    master.gain.exponentialRampToValueAtTime(0.22, now + 0.05)
+    master.gain.exponentialRampToValueAtTime(0.0001, now + 1.25)
+    master.connect(context.destination)
+
+    ;[0, 0.42].forEach((offset, index) => {
+      const oscillator = context.createOscillator()
+      const gain = context.createGain()
+      oscillator.type = 'sine'
+      oscillator.frequency.setValueAtTime(index === 0 ? 420 : 360, now + offset)
+      oscillator.frequency.exponentialRampToValueAtTime(index === 0 ? 245 : 220, now + offset + 0.5)
+      gain.gain.setValueAtTime(0.0001, now + offset)
+      gain.gain.exponentialRampToValueAtTime(index === 0 ? 0.9 : 0.65, now + offset + 0.05)
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + offset + 0.6)
+      oscillator.connect(gain)
+      gain.connect(master)
+      oscillator.start(now + offset)
+      oscillator.stop(now + offset + 0.62)
+    })
+
+    window.setTimeout(() => context.close(), 1500)
+  }
+
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      aria-label="Play pigeon sound"
+      onClick={playCoo}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') playCoo() }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{ position: 'absolute', top: '9%', left: '84%', width: '92px', zIndex: hovered ? 20 : 3, cursor: 'pointer', transform: hovered ? 'rotate(-.2deg) translateY(-9px) scale(1.05)' : 'rotate(3deg)', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)', outline: 'none' }}
+    >
+      <PushPin color="#7c3aed" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
+      <img src={pigeonImg} alt="Pigeon" style={{ width: '100%', height: 'auto', display: 'block', filter: hovered ? 'drop-shadow(0 14px 28px rgba(0,0,0,.42))' : 'drop-shadow(3px 6px 12px rgba(0,0,0,.3))', transition: 'filter .25s ease' }} />
+      <div style={{ textAlign: 'center', marginTop: '6px', opacity: hovered ? 1 : 0, transition: 'opacity .2s ease' }}><span style={{ fontFamily: "'Space Mono', monospace", fontSize: '7px', letterSpacing: '.08em', color: '#39220a', background: 'rgba(255,248,220,.94)', padding: '2px 8px', whiteSpace: 'nowrap' }}>Click to coo ♪</span></div>
+    </div>
+  )
+}
+
 // ─── Places Modal ─────────────────────────────────────────────────────────────
 
 function PlacesModal({ onClose }: { onClose: () => void }) {
@@ -1819,6 +1868,9 @@ export default function App() {
 
             {/* Travel map card */}
             <MapCard onOpen={() => setShowMap(true)} />
+
+            {/* Pigeon sound sticker */}
+            <PigeonSticker />
 
             {/* Camera sticker */}
             <CameraCard onOpen={() => setShowFilm(true)} />
