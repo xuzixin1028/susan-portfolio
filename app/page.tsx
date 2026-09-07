@@ -142,7 +142,7 @@ const PROJECTS: Project[] = [
   {
     id: 2, num: '02', title: 'Altheros Capital', role: 'UI/UX Design Administrative Lead',
     category: 'UX DESIGN', cardType: 'sticker',
-    rotation: 4.0, top: '49%', left: '33%',
+    rotation: 4.0, top: '29%', left: '1%',
     pinColor: '#0d3880', bg: '#ffffff', accent: '#1a1a1a',
     stickerSrc: acImg, stickerSize: 115,
     detail: {
@@ -1038,7 +1038,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>IBM</h2>
-          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Turning fragmented revenue data into actionable insights for product managers.</p>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.65 }}>Turning fragmented revenue data into actionable insights for product managers.</p>
 
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
 
@@ -1069,7 +1069,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>Altheros Capital</h2>
-          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Leading design across 10 client products and a 20-person design team.</p>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.65 }}>Leading design across 10 client products and a 20-person design team.</p>
 
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
 
@@ -1133,7 +1133,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>Medium Design Collective</h2>
-          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Designing and leading client projects from brand identity to digital experiences.</p>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.65 }}>Designing and leading client projects from brand identity to digital experiences.</p>
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
           <p style={{ margin: 0, color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>Through Medium Design Collective, I worked across client projects as both a product designer and project manager, translating client needs into visual identities and digital experiences while collaborating with multidisciplinary design teams.</p>
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
@@ -1171,7 +1171,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>New York State Bridge Authority</h2>
-          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Improving internal operations and employee experiences within government.</p>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.65 }}>Improving internal operations and employee experiences within government.</p>
 
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
 
@@ -1218,7 +1218,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>Develop for Good</h2>
-          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Designing digital products for mission-driven organizations and the communities they serve.</p>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.65 }}>Designing digital products for mission-driven organizations and the communities they serve.</p>
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
           <p style={{ margin: 0, color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>Through Develop for Good, I worked across two nonprofit projects as a product designer and developer, translating organizational needs into thoughtful digital experiences while collaborating with multidisciplinary design and development teams.</p>
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
@@ -1258,16 +1258,15 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>Chinese Drama Society at Cornell</h2>
-          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Building the visual identity behind Cornell&apos;s Chinese-language theatre productions.</p>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.65 }}>Building the visual identity behind Cornell&apos;s Chinese-language theatre productions.</p>
 
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
 
-          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.45fr .8fr .7fr 1fr', gap: '26px' }}>
+          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.45fr .8fr .7fr', gap: '26px' }}>
             {[
               ['MY ROLE', 'Publicity Lead · Product Designer · Project Manager'],
               ['TIMELINE', 'Jan. 2025 – Present'],
               ['TEAM', '5 Designers'],
-              ['TOOLS', 'Figma · VS Code · Canva · Xiumi'],
             ].map(([label, value]) => (
               <div key={label}><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>{label}</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>{value}</p></div>
             ))}
@@ -1303,7 +1302,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9px', letterSpacing: '.14em', color: '#1db954', marginBottom: '10px' }}>INFO 1998 · INTRO TO DIGITAL PRODUCT DESIGN</div>
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '43px', lineHeight: 1, fontWeight: 700 }}>A Spotify feature concept</h2>
-          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>A Spotify feature concept that makes adding and managing multiple songs more efficient while staying familiar to existing users.</p>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.65 }}>A Spotify feature concept that makes adding and managing multiple songs more efficient while staying familiar to existing users.</p>
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
           <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '36px' }}>
             <div><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>MY ROLE</b><p style={{ ...paragraph, margin: 0 }}>Product Designer · Individual Case Study</p></div>
@@ -1409,16 +1408,15 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>INFO 3450 Human Computer Interaction</h2>
-          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Turning user research into an iterative digital product.</p>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.65 }}>Turning user research into an iterative digital product.</p>
 
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
 
-          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '26px' }}>
+          <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '26px' }}>
             {[
               ['MY ROLE', 'Product Designer'],
               ['TIMELINE', 'Fall 2025'],
               ['TEAM', '4 Designers'],
-              ['TOOLS', 'Figma · FigJam'],
             ].map(([label, value]) => (
               <div key={label}><b style={{ display: 'block', marginBottom: '8px', fontFamily: "'Noto Sans', sans-serif", fontSize: '10px', fontWeight: 800, letterSpacing: '.12em' }}>{label}</b><p style={{ margin: 0, fontFamily: "'Nunito', sans-serif", fontSize: '13px', lineHeight: 1.65 }}>{value}</p></div>
             ))}
@@ -1447,13 +1445,13 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
 
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>INFO 4125 Project Management</h2>
-          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>Taking a product from planning to execution through cross-functional teamwork.</p>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.65 }}>Taking a product from planning to execution through cross-functional teamwork.</p>
 
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
 
           <div className="ibm-meta" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '30px' }}>
             {[
-              ['MY ROLE', 'Designer'],
+              ['MY ROLE', 'Project Management, Designer'],
               ['TIMELINE', 'Fall 2025'],
               ['TEAM', '8 Team Members'],
             ].map(([label, value]) => (
@@ -1492,7 +1490,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         <article onClick={(e) => e.stopPropagation()} className="modal-scroll" style={{ background: '#fff', width: 'min(700px, 94vw)', maxHeight: '88vh', overflowY: 'auto', position: 'relative', padding: '72px 58px 56px', boxShadow: '0 24px 80px rgba(0,0,0,.42)', transform: `rotate(${isYami ? '.1deg' : '-.1deg'})` }}>
           <button onClick={onClose} style={{ position: 'absolute', top: '18px', right: '24px', border: 0, background: '#17120d', color: '#fff', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '.12em', padding: '8px 12px', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}>BACK TO BOARD ×</button>
           <h2 style={{ margin: '0 0 12px', color: '#111', fontFamily: "'Playfair Display', serif", fontSize: '42px', lineHeight: 1, fontWeight: 700 }}>{title}</h2>
-          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '17px', lineHeight: 1.65 }}>{summary}</p>
+          <p style={{ margin: 0, color: '#333', fontFamily: "'Nunito', sans-serif", fontSize: '14px', lineHeight: 1.65 }}>{summary}</p>
           <div style={{ height: '1px', background: '#ddd', margin: '32px 0' }} />
           <p style={{ margin: 0, fontFamily: "'Noto Sans', sans-serif", fontSize: '12px', fontWeight: 800, letterSpacing: '.04em', color: '#222' }}>{timeline}</p>
           <div style={{ height: '1px', background: '#ddd', margin: '32px 0' }} />
@@ -1865,7 +1863,7 @@ export default function App() {
               backTitle="Class of 2027"
               backSubtitle="Senior Year"
               backBg="#fff5f5" backAccent="#9c2020"
-              top="29%" left="1%" rotation={2.8} pinColor="#cc2200" width={190}
+              top="49%" left="33%" rotation={2.8} pinColor="#cc2200" width={190}
               aspectRatio={0.44}
             />
 
