@@ -798,7 +798,7 @@ function CameraCard({ onOpen }: { onOpen: () => void }) {
     <div
       style={{
         position: 'absolute',
-        top: '53%',
+        top: '59%',
         left: '21%',
         width: '134px',
         cursor: 'pointer',
