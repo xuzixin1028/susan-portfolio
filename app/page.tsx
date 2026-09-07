@@ -1436,13 +1436,23 @@ export default function App() {
             <SuitcaseCard onOpen={() => setShowTravel(true)} />
 
             {/* Yami sticker */}
-            <div onClick={() => setActiveProject(YAMI_PROJECT)} style={{ position: 'absolute', top: '23%', left: '29%', width: '80px', zIndex: 2, transform: 'rotate(4deg)', cursor: 'pointer' }}>
+            <div
+              onClick={() => setActiveProject(YAMI_PROJECT)}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'rotate(.4deg) translateY(-10px) scale(1.04)'; e.currentTarget.style.zIndex = '20' }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = 'rotate(4deg) translateY(0) scale(1)'; e.currentTarget.style.zIndex = '2' }}
+              style={{ position: 'absolute', top: '23%', left: '29%', width: '80px', zIndex: 2, transform: 'rotate(4deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
+            >
               <PushPin color="#cc2222" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={yamiImg} alt="Yami" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
             </div>
 
             {/* Notion sticker */}
-            <div onClick={() => setActiveProject(NOTION_PROJECT)} style={{ position: 'absolute', top: '12%', left: '23%', width: '88px', zIndex: 2, transform: 'rotate(-3deg)', cursor: 'pointer' }}>
+            <div
+              onClick={() => setActiveProject(NOTION_PROJECT)}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'rotate(-.3deg) translateY(-10px) scale(1.04)'; e.currentTarget.style.zIndex = '20' }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = 'rotate(-3deg) translateY(0) scale(1)'; e.currentTarget.style.zIndex = '2' }}
+              style={{ position: 'absolute', top: '12%', left: '23%', width: '88px', zIndex: 2, transform: 'rotate(-3deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
+            >
               <PushPin color="#444" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={notionImg} alt="Notion" style={{ width: '100%', height: 'auto', display: 'block', filter: 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))' }} />
             </div>
