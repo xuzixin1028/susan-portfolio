@@ -142,7 +142,7 @@ const PROJECTS: Project[] = [
   {
     id: 2, num: '02', title: 'Altheros Capital', role: 'UI/UX Design Administrative Lead',
     category: 'UX DESIGN', cardType: 'sticker',
-    rotation: 4.0, top: '29%', left: '1%',
+    rotation: 4.0, top: '24%', left: '13%',
     pinColor: '#0d3880', bg: '#ffffff', accent: '#1a1a1a',
     stickerSrc: acImg, stickerSize: 115,
     detail: {
@@ -1083,8 +1083,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           <div style={{ display: 'grid', gap: '18px', color: '#272727', fontFamily: "'Nunito', sans-serif", fontSize: '15px', lineHeight: 1.8 }}>
             <p style={{ margin: 0 }}>As UI/UX Design Administrative Lead, I managed 20 designers across 10 projects, matching designers to projects based on their interests and strengths while supporting teams throughout the design process.</p>
-            <p style={{ margin: 0 }}>I worked closely with product managers, business leads, and developers to translate product needs into design direction, troubleshoot UX challenges, and coordinate design resources across teams.</p>
-            <p style={{ margin: 0 }}>Several projects progressed from early product requirements through design, development, and final client delivery.</p>
+            <p style={{ margin: 0 }}>I worked closely with product managers, business leads, and developers to translate product needs into design direction, resolve UX challenges, and coordinate design resources from early requirements through development and final client delivery.</p>
           </div>
 
           <div style={{ height: '1px', background: '#ddd', margin: '34px 0' }} />
@@ -1701,11 +1700,8 @@ export default function App() {
           <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '42px', fontWeight: 700, color: '#1a1a1a', lineHeight: .95, marginBottom: '10px', letterSpacing: '-0.035em' }}>
             SUSAN XU
           </div>
-          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '11px', color: '#444', lineHeight: 1.5, marginBottom: '1px' }}>
-            Information Science, Systems, and Technology
-          </div>
-          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '11px', color: '#666', marginBottom: '5px' }}>
-            @ Cornell Engineering
+          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '7.5px', letterSpacing: '-0.025em', color: '#444', lineHeight: 1.4, marginBottom: '5px', whiteSpace: 'nowrap' }}>
+            Information Science, Systems, and Technology @ Cornell Engineering
           </div>
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '8.5px', letterSpacing: '0.1em', color: '#a0a0a0', marginBottom: '16px' }}>
             Data Science + UX Design
@@ -1863,7 +1859,7 @@ export default function App() {
               backTitle="Class of 2027"
               backSubtitle="Senior Year"
               backBg="#fff5f5" backAccent="#9c2020"
-              top="49%" left="33%" rotation={2.8} pinColor="#cc2200" width={190}
+              top="52%" left="20%" rotation={2.8} pinColor="#cc2200" width={190}
               aspectRatio={0.44}
             />
 
