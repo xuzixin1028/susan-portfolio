@@ -142,7 +142,7 @@ const PROJECTS: Project[] = [
   {
     id: 2, num: '02', title: 'Altheros Capital', role: 'UI/UX Design Administrative Lead',
     category: 'UX DESIGN', cardType: 'sticker',
-    rotation: 4.0, top: '24%', left: '13%',
+    rotation: 4.0, top: '24%', left: '10%',
     pinColor: '#0d3880', bg: '#ffffff', accent: '#1a1a1a',
     stickerSrc: acImg, stickerSize: 115,
     detail: {
@@ -1700,7 +1700,7 @@ export default function App() {
           <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '42px', fontWeight: 700, color: '#1a1a1a', lineHeight: .95, marginBottom: '10px', letterSpacing: '-0.035em' }}>
             SUSAN XU
           </div>
-          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '7.5px', letterSpacing: '-0.025em', color: '#444', lineHeight: 1.4, marginBottom: '5px', whiteSpace: 'nowrap' }}>
+          <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '8px', letterSpacing: '-0.035em', color: '#444', lineHeight: 1.4, marginBottom: '5px', whiteSpace: 'nowrap' }}>
             Information Science, Systems, and Technology @ Cornell Engineering
           </div>
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '8.5px', letterSpacing: '0.1em', color: '#a0a0a0', marginBottom: '16px' }}>
@@ -1843,7 +1843,7 @@ export default function App() {
               onClick={() => setActiveProject(NOTION_PROJECT)}
               onMouseEnter={() => setHoveredAmbassador('notion')}
               onMouseLeave={() => setHoveredAmbassador(null)}
-              style={{ position: 'absolute', top: '17%', left: '27%', width: '88px', zIndex: hoveredAmbassador === 'notion' ? 20 : 2, transform: hoveredAmbassador === 'notion' ? 'rotate(-.3deg) translateY(-10px) scale(1.04)' : 'rotate(-3deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
+              style={{ position: 'absolute', top: '20%', left: '25%', width: '88px', zIndex: hoveredAmbassador === 'notion' ? 20 : 2, transform: hoveredAmbassador === 'notion' ? 'rotate(-.3deg) translateY(-10px) scale(1.04)' : 'rotate(-3deg) translateY(0) scale(1)', cursor: 'pointer', transition: 'transform .28s cubic-bezier(.34,1.56,.64,1)' }}
             >
               <PushPin color="#444" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
               <img src={notionImg} alt="Notion" style={{ width: '100%', height: 'auto', display: 'block', filter: hoveredAmbassador === 'notion' ? 'drop-shadow(0 16px 32px rgba(0,0,0,.42)) drop-shadow(0 5px 14px rgba(0,0,0,.26))' : 'drop-shadow(2px 5px 10px rgba(0,0,0,0.28))', transition: 'filter .25s ease' }} />
