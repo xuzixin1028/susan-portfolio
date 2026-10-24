@@ -66,60 +66,6 @@ interface Project {
   detail: Detail
 }
 
-interface TravelCountry {
-  name: string
-  cities: string[]
-}
-
-interface TravelRegion {
-  emoji: string
-  name: string
-  countries: TravelCountry[]
-}
-
-// ─── Travel Data ──────────────────────────────────────────────────────────────
-
-const TRAVEL_REGIONS: TravelRegion[] = [
-  {
-    emoji: '🌏',
-    name: 'Asia',
-    countries: [
-      { name: 'Russia', cities: ['Moscow'] },
-      { name: 'China', cities: ['🏠 Tianjin (home)', 'Beijing', 'Shanghai', 'Chengdu', 'Chongqing', 'Shenyang', 'Sanya', 'Qingdao', 'Jiuzhaigou', 'Xilinhot'] },
-      { name: 'Korea', cities: ['Seoul'] },
-      { name: 'Japan', cities: ['Tokyo', 'Osaka', 'Kyoto'] },
-      { name: 'Hong Kong', cities: [] },
-      { name: 'Singapore', cities: [] },
-    ]
-  },
-  {
-    emoji: '🌍',
-    name: 'Europe',
-    countries: [
-      { name: 'Iceland', cities: [] },
-      { name: 'France', cities: ['Paris'] },
-      { name: 'Switzerland', cities: [] },
-    ]
-  },
-  {
-    emoji: '🌊',
-    name: 'Caribbean',
-    countries: [
-      { name: 'Bahamas', cities: [] },
-      { name: 'Puerto Rico', cities: [] },
-      { name: 'Dominican Republic', cities: [] },
-    ]
-  },
-  {
-    emoji: '🗺️',
-    name: 'North America',
-    countries: [
-      { name: 'United States', cities: ['🏠 New York (home)', 'Maine', 'Boston', 'Virginia', 'New Jersey', 'Pennsylvania', 'Connecticut', 'Vermont', 'Florida', 'New Orleans', 'Las Vegas', 'California'] },
-      { name: 'Canada', cities: ['Toronto', 'Vancouver'] },
-    ]
-  },
-]
-
 // ─── Project Data ─────────────────────────────────────────────────────────────
 
 const PROJECTS: Project[] = [
@@ -354,6 +300,8 @@ function StickerCard({ project, highlighted, onClick, onHover }: CardProps) {
         zIndex: active ? 20 : 2,
         transform: `rotate(${active ? project.rotation * 0.1 : project.rotation}deg) translateY(${active ? -10 : 0}px)`,
         transition: 'all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1)',
+        textDecoration: 'none',
+        color: 'inherit',
       }}
       onClick={() => onClick(project)}
       onMouseEnter={() => { setHovered(true); onHover(project.id) }}
@@ -902,11 +850,13 @@ function FilmStripModal({ onClose }: { onClose: () => void }) {
 
 // ─── Map Card ─────────────────────────────────────────────────────────────────
 
-function MapCard({ onOpen }: { onOpen: () => void }) {
+function MapCard() {
   const [hovered, setHovered] = useState(false)
 
   return (
-    <div
+    <a
+      href="https://susan-travel-diary.mdsx2025.chatgpt.site"
+      aria-label="Open Susan's Travel Diary"
       style={{
         position: 'absolute',
         top: '9%',
@@ -923,7 +873,6 @@ function MapCard({ onOpen }: { onOpen: () => void }) {
           : '3px 5px 16px rgba(0,0,0,0.22), 1px 2px 5px rgba(0,0,0,0.1)',
         transition: 'all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
-      onClick={onOpen}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -940,9 +889,9 @@ function MapCard({ onOpen }: { onOpen: () => void }) {
       />
 
       <div style={{ marginTop: '7px', textAlign: 'center', fontFamily: "'Space Mono', monospace", fontSize: '7.5px', letterSpacing: '0.1em', color: '#94a3b8', opacity: hovered ? 1 : 0, transition: 'opacity 0.2s ease' }}>
-        View Full List →
+        Open Travel Diary →
       </div>
-    </div>
+    </a>
   )
 }
 
@@ -990,83 +939,6 @@ function PigeonSticker() {
       <PushPin color="#7c3aed" style={{ top: '-12px', left: '50%', transform: 'translateX(-50%)' }} />
       <img src={pigeonImg} alt="Pigeon" style={{ width: '100%', height: 'auto', display: 'block', filter: hovered ? 'drop-shadow(0 14px 28px rgba(0,0,0,.42))' : 'drop-shadow(3px 6px 12px rgba(0,0,0,.3))', transition: 'filter .25s ease' }} />
       <div style={{ textAlign: 'center', marginTop: '6px', opacity: hovered ? 1 : 0, transition: 'opacity .2s ease' }}><span style={{ fontFamily: "'Space Mono', monospace", fontSize: '7px', letterSpacing: '.08em', color: '#39220a', background: 'rgba(255,248,220,.94)', padding: '2px 8px', whiteSpace: 'nowrap' }}>Click to coo ♪</span></div>
-    </div>
-  )
-}
-
-// ─── Places Modal ─────────────────────────────────────────────────────────────
-
-function PlacesModal({ onClose }: { onClose: () => void }) {
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
-    window.addEventListener('keydown', handler)
-    return () => window.removeEventListener('keydown', handler)
-  }, [onClose])
-
-  return (
-    <div
-      onClick={onClose}
-      style={{ position: 'fixed', inset: 0, background: 'rgba(90, 58, 20, 0.75)', backdropFilter: 'blur(2px)', zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}
-    >
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className="modal-scroll"
-        style={{ background: '#ffffff', width: 'min(640px, 92vw)', maxHeight: '88vh', overflowY: 'auto', borderRadius: '1px', padding: '54px 50px 48px', position: 'relative', boxShadow: '0 24px 80px rgba(0,0,0,0.42), 0 8px 24px rgba(0,0,0,0.2)', transform: 'rotate(0.3deg)' }}
-      >
-        <button
-          onClick={onClose}
-          style={{ position: 'absolute', top: '18px', right: '20px', background: '#17120d', border: 'none', cursor: 'pointer', fontFamily: "'Space Mono', monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', color: '#fff', padding: '8px 12px', transition: 'all 0.15s ease', boxShadow: '0 3px 10px rgba(0,0,0,.2)' }}
-          onMouseEnter={(e) => { (e.target as HTMLButtonElement).style.color = '#555' }}
-          onMouseLeave={(e) => { (e.target as HTMLButtonElement).style.color = '#c0c0c0' }}
-        >
-          BACK TO BOARD ×
-        </button>
-
-        <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '8px', letterSpacing: '0.18em', color: '#94a3b8', marginBottom: '8px' }}>
-          PLACES I'VE BEEN
-        </div>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '34px', fontWeight: 700, color: '#1a1a1a', margin: '0 0 6px', lineHeight: 1.05 }}>
-          Around the World
-        </h2>
-        <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '13px', color: '#94a3b8', marginBottom: '24px' }}>
-          4 continents · 20+ countries · countless memories
-        </div>
-
-        <img
-          src={mapImg}
-          alt="Travel map"
-          style={{ width: '100%', height: 'auto', borderRadius: '2px', marginBottom: '28px', boxShadow: '0 2px 12px rgba(0,0,0,0.1)' }}
-        />
-
-        <div style={{ height: '1px', background: '#ececec', marginBottom: '28px' }} />
-
-        {TRAVEL_REGIONS.map((region) => (
-          <div key={region.name} style={{ marginBottom: '26px' }}>
-            {/* Region header */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-              <span style={{ fontSize: '15px', lineHeight: 1 }}>{region.emoji}</span>
-              <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '17px', fontWeight: 700, color: '#1a1a1a' }}>
-                {region.name}
-              </div>
-              <div style={{ flex: 1, height: '1px', background: '#ececec', marginLeft: '4px' }} />
-            </div>
-
-            {/* Countries */}
-            {region.countries.map((country) => (
-              <div key={country.name} style={{ display: 'flex', gap: '16px', marginBottom: '7px', alignItems: 'flex-start' }}>
-                <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '9.5px', color: '#1e3a8a', fontWeight: 700, minWidth: '130px', paddingTop: '2px', letterSpacing: '0.04em', flexShrink: 0 }}>
-                  {country.name}
-                </div>
-                <div style={{ fontFamily: "'Nunito', sans-serif", fontSize: '13px', color: '#444', lineHeight: 1.6, flex: 1 }}>
-                  {country.cities.length > 0 ? country.cities.join(' · ') : (
-                    <span style={{ color: '#94a3b8', fontStyle: 'italic' }}>visited</span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
     </div>
   )
 }
@@ -1714,7 +1586,6 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
 export default function App() {
   const [activeProject, setActiveProject] = useState<Project | null>(null)
-  const [showMap, setShowMap] = useState(false)
   const [showBio, setShowBio] = useState(false)
   const [showFilm, setShowFilm] = useState(false)
   const [showTravel, setShowTravel] = useState(false)
@@ -1831,13 +1702,14 @@ export default function App() {
             </div>
 
             {/* Map card on mobile */}
-            <div
-              onClick={() => setShowMap(true)}
-              style={{ width: 'calc(50% - 9px)', background: '#fff', padding: '12px', borderRadius: '2px', boxShadow: '3px 4px 14px rgba(0,0,0,0.2)', cursor: 'pointer', border: '1px solid rgba(0,0,0,0.05)' }}
+            <a
+              href="https://susan-travel-diary.mdsx2025.chatgpt.site"
+              aria-label="Open Susan's Travel Diary"
+              style={{ width: 'calc(50% - 9px)', background: '#fff', padding: '12px', borderRadius: '2px', boxShadow: '3px 4px 14px rgba(0,0,0,0.2)', cursor: 'pointer', border: '1px solid rgba(0,0,0,0.05)', textDecoration: 'none', color: 'inherit' }}
             >
               <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '7px', color: '#94a3b8', letterSpacing: '0.12em', marginBottom: '6px' }}>PLACES I'VE BEEN</div>
               <img src={mapImg} alt="Travel map" style={{ width: '100%', height: 'auto', borderRadius: '1px' }} />
-            </div>
+            </a>
 
             {PROJECTS.map((p) => (
               <div
@@ -1868,7 +1740,7 @@ export default function App() {
 
 
             {/* Travel map card */}
-            <MapCard onOpen={() => setShowMap(true)} />
+            <MapCard />
 
             {/* Pigeon sound sticker */}
             <PigeonSticker />
@@ -1944,7 +1816,6 @@ export default function App() {
       {showTravel && <TravelModal onClose={() => setShowTravel(false)} />}
       {showFilm && <FilmStripModal onClose={() => setShowFilm(false)} />}
       {showBio && <BioModal onClose={() => setShowBio(false)} />}
-      {showMap && <PlacesModal onClose={() => setShowMap(false)} />}
       {activeProject && <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />}
     </>
   )
